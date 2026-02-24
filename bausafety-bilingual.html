@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bausafety (ბაუსეიფთი) — Georgia's premier construction safety and occupational health consulting company.">
+<title>Bausafety | ბაუსეიფთი — Construction Safety Consulting</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230A1628'/><text y='24' x='4' font-size='22' font-family='sans-serif' fill='%23F97316'>⛑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Serif+Display&family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #122040;
+    --navy-light: #1a2f58;
+    --orange: #F97316;
+    --orange-dark: #ea6d0e;
+    --orange-glow: rgba(249,115,22,0.15);
+    --white: #ffffff;
+    --off-white: #f8f7f4;
+    --gray-100: #f1f0ed;
+    --gray-200: #e5e4e0;
+    --gray-400: #9ca3af;
+    --gray-600: #6b7280;
+    --gray-800: #1f2937;
+    --text: #1a1a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', 'Noto Sans Georgian', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Georgian font override */
+  :lang(ka), [lang="ka"] {
+    font-family: 'Noto Sans Georgian', sans-serif;
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    padding: .35rem .75rem;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .lang-btn.active {
+    background: var(--orange);
+    color: var(--white);
+  }
+  .lang-btn:hover:not(.active) {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+  }
+
+  /* Language visibility */
+  [data-lang="ka"] { display: none; }
+  body.lang-ka [data-lang="en"] { display: none; }
+  body.lang-ka [data-lang="ka"] { display: block; }
+  body.lang-ka span[data-lang="ka"] { display: inline; }
+  body.lang-ka span[data-lang="en"] { display: none; }
+  body.lang-ka div[data-lang="ka"] { display: block; }
+  body.lang-ka div[data-lang="en"] { display: none; }
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,22,40,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(249,115,22,0.15);
+    transition: all .3s ease;
+  }
+  .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 72px;
+    gap: 1rem;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: .75rem;
+    cursor: pointer; text-decoration: none; flex-shrink: 0;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-logo-en {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--white); letter-spacing: .05em;
+  }
+  .nav-logo-geo { font-size: .65rem; color: var(--orange); letter-spacing: .08em; font-weight: 400; }
+  .nav-links {
+    display: flex; align-items: center; gap: .25rem;
+    list-style: none; flex: 1; justify-content: center;
+  }
+  .nav-links li a {
+    display: block; padding: .5rem .9rem;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-size: .875rem; font-weight: 500; letter-spacing: .02em;
+    border-radius: 6px; transition: all .2s; cursor: pointer;
+  }
+  .nav-links li a:hover, .nav-links li a.active { color: var(--white); background: rgba(249,115,22,0.12); }
+  .nav-links li a.active { color: var(--orange); }
+  .nav-cta { background: var(--orange) !important; color: var(--white) !important; padding: .5rem 1.25rem !important; border-radius: 6px !important; }
+  .nav-cta:hover { background: var(--orange-dark) !important; }
+
+  .nav-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--white); border-radius: 2px; transition: all .3s;
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; background: var(--navy);
+    position: relative; display: flex; align-items: center; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(249,115,22,.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 20% 80%, rgba(18,32,64,.8) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-diag {
+    position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    overflow: hidden;
+  }
+  .hero-diag::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F97316' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1280px; margin: 0 auto;
+    padding: 8rem 2rem 4rem; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.25);
+    color: var(--orange); font-size: .75rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: .4rem 1rem; border-radius: 100px; margin-bottom: 2rem;
+    animation: fadeInUp .6s ease both;
+  }
+  .hero-badge::before { content: '⚡'; }
+  .hero-h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: .95; color: var(--white); letter-spacing: .02em;
+    max-width: 700px; animation: fadeInUp .6s .1s ease both;
+  }
+  .hero-h1 span { color: var(--orange); }
+
+  /* Georgian hero heading */
+  body.lang-ka .hero-h1 {
+    font-family: 'Noto Sans Georgian', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 700; line-height: 1.15;
+  }
+
+  .hero-sub {
+    margin-top: 1.5rem; font-size: 1.15rem; line-height: 1.7;
+    color: rgba(255,255,255,.65); max-width: 500px;
+    font-weight: 300; animation: fadeInUp .6s .2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-top: 2.5rem; animation: fadeInUp .6s .3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--orange); color: var(--white);
+    padding: .9rem 2rem; border-radius: 8px;
+    font-size: .95rem; font-weight: 600; letter-spacing: .02em;
+    cursor: pointer; border: none; text-decoration: none;
+    transition: all .25s; box-shadow: 0 4px 20px rgba(249,115,22,.4);
+  }
+  .btn-primary:hover {
+    background: var(--orange-dark); transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(249,115,22,.5);
+  }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: transparent; color: var(--white);
+    padding: .9rem 2rem; border-radius: 8px;
+    font-size: .95rem; font-weight: 500; cursor: pointer;
+    border: 1px solid rgba(255,255,255,.2); text-decoration: none;
+    transition: all .25s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.4); }
+  .hero-stats {
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,.08);
+    animation: fadeInUp .6s .4s ease both;
+  }
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem; color: var(--orange);
+    line-height: 1; letter-spacing: .02em;
+  }
+  .hero-stat-label {
+    font-size: .8rem; color: rgba(255,255,255,.5);
+    letter-spacing: .06em; text-transform: uppercase; margin-top: .3rem;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .section-label {
+    display: inline-block; font-size: .72rem; font-weight: 700;
+    letter-spacing: .15em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: .75rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.15; color: var(--navy); max-width: 600px;
+  }
+  body.lang-ka .section-title {
+    font-family: 'Noto Sans Georgian', sans-serif;
+    font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+  .section-title.light { color: var(--white); }
+  .section-desc {
+    margin-top: 1rem; font-size: 1.05rem;
+    line-height: 1.7; color: var(--gray-600); max-width: 580px;
+  }
+  .section-desc.light { color: rgba(255,255,255,.6); }
+
+  /* ── SERVICES GRID ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: 12px; padding: 2rem;
+    transition: all .3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--orange);
+    transform: scaleX(0); transform-origin: left; transition: transform .3s;
+  }
+  .service-card:hover { border-color: transparent; box-shadow: 0 12px 40px rgba(10,22,40,.1); transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px; background: var(--orange-glow);
+    border-radius: 10px; display: flex; align-items: center;
+    justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem;
+  }
+  .service-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem; color: var(--navy); margin-bottom: .75rem;
+  }
+  body.lang-ka .service-card h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1rem; }
+  .service-card p { font-size: .9rem; line-height: 1.65; color: var(--gray-600); }
+
+  /* ── WHY US ── */
+  .why-section { background: var(--navy); position: relative; overflow: hidden; }
+  .why-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 90% 50%, rgba(249,115,22,.06) 0%, transparent 60%);
+  }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .why-items { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+  .why-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.25rem; background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07); border-radius: 10px; transition: all .25s;
+  }
+  .why-item:hover { background: rgba(249,115,22,.06); border-color: rgba(249,115,22,.15); }
+  .why-item-icon {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: rgba(249,115,22,.12); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; color: var(--orange);
+  }
+  .why-item-text h4 { font-size: .95rem; font-weight: 600; color: var(--white); margin-bottom: .25rem; }
+  .why-item-text p { font-size: .85rem; line-height: 1.6; color: rgba(255,255,255,.5); }
+  .why-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .why-visual-card {
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px; padding: 2.5rem; width: 100%; text-align: center;
+  }
+  .why-big-num { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: var(--orange); line-height: 1; opacity: .9; }
+  .why-big-label { font-size: .85rem; color: rgba(255,255,255,.5); letter-spacing: .05em; text-transform: uppercase; margin-top: .5rem; }
+  .why-divider { width: 40px; height: 2px; background: var(--orange); margin: 1.5rem auto; opacity: .4; }
+  .cert-badges { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 1.5rem; }
+  .cert-badge {
+    background: rgba(249,115,22,.08); border: 1px solid rgba(249,115,22,.2);
+    color: var(--orange); font-size: .75rem; font-weight: 600;
+    padding: .4rem .85rem; border-radius: 100px; letter-spacing: .04em;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: var(--off-white); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: var(--white); border-radius: 12px; padding: 2rem;
+    box-shadow: 0 2px 12px rgba(10,22,40,.06);
+    border: 1px solid var(--gray-200); transition: box-shadow .3s;
+  }
+  .testimonial-card:hover { box-shadow: 0 8px 32px rgba(10,22,40,.12); }
+  .stars { color: var(--orange); font-size: 1rem; margin-bottom: 1rem; letter-spacing: .1em; }
+  .testimonial-text { font-size: .93rem; line-height: 1.7; color: var(--gray-800); font-style: italic; margin-bottom: 1.25rem; }
+  .testimonial-author { display: flex; align-items: center; gap: .75rem; }
+  .author-avatar {
+    width: 40px; height: 40px; border-radius: 50%; background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
+    color: var(--orange); flex-shrink: 0;
+  }
+  .author-name { font-weight: 600; font-size: .9rem; color: var(--navy); }
+  .author-role { font-size: .78rem; color: var(--gray-600); }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    position: relative; overflow: hidden; padding: 5rem 2rem; text-align: center;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(249,115,22,.08) 0%, transparent 70%);
+  }
+  .cta-banner-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+  .cta-banner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem); color: var(--white);
+    letter-spacing: .03em; line-height: 1; margin-bottom: 1rem;
+  }
+  body.lang-ka .cta-banner h2 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.8rem); line-height: 1.2; }
+  .cta-banner h2 span { color: var(--orange); }
+  .cta-banner p { color: rgba(255,255,255,.6); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer { background: #060d1a; color: rgba(255,255,255,.6); padding: 4rem 2rem 2rem; }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-brand-desc { font-size: .875rem; line-height: 1.7; margin-top: 1rem; opacity: .6; }
+  footer h4 {
+    font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: .6rem; }
+  footer ul li a {
+    color: rgba(255,255,255,.5); text-decoration: none;
+    font-size: .875rem; transition: color .2s; cursor: pointer;
+  }
+  footer ul li a:hover { color: var(--orange); }
+  .footer-contact-item {
+    display: flex; gap: .6rem; align-items: flex-start;
+    margin-bottom: .75rem; font-size: .875rem;
+  }
+  .footer-contact-item span:first-child { color: var(--orange); flex-shrink: 0; }
+  .footer-bottom {
+    max-width: 1280px; margin: 3rem auto 0;
+    padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.07);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem; font-size: .8rem;
+  }
+
+  /* ── ABOUT / PAGE HEROES ── */
+  .about-hero {
+    background: var(--navy); padding: 10rem 2rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .about-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(249,115,22,.06) 0%, transparent 60%);
+  }
+  .page-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+  .page-hero-inner h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem); color: var(--white);
+    letter-spacing: .03em; line-height: 1; margin-bottom: 1rem;
+  }
+  body.lang-ka .page-hero-inner h1 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.2; }
+  .page-hero-inner h1 span { color: var(--orange); }
+  .page-hero-inner p { font-size: 1.1rem; color: rgba(255,255,255,.6); max-width: 550px; line-height: 1.7; }
+  .breadcrumb {
+    display: flex; gap: .5rem; align-items: center;
+    margin-bottom: 1.5rem; font-size: .8rem; color: rgba(255,255,255,.4);
+  }
+  .breadcrumb span { color: var(--orange); }
+
+  /* ── MISSION / VISION ── */
+  .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .mv-card { border-radius: 12px; padding: 2.5rem; position: relative; overflow: hidden; }
+  .mv-card.mission { background: var(--navy); }
+  .mv-card.vision { background: var(--orange); }
+  .mv-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; letter-spacing: .05em; margin-bottom: 1rem;
+  }
+  body.lang-ka .mv-card h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.3rem; }
+  .mv-card.mission h3 { color: var(--orange); }
+  .mv-card.vision h3 { color: var(--white); }
+  .mv-card p { line-height: 1.75; font-size: .95rem; }
+  .mv-card.mission p { color: rgba(255,255,255,.65); }
+  .mv-card.vision p { color: rgba(255,255,255,.85); }
+  .mv-large {
+    font-family: 'Bebas Neue', sans-serif; font-size: 5rem; line-height: 1;
+    opacity: .06; position: absolute; bottom: -1rem; right: 1rem; letter-spacing: .05em;
+    color: var(--white);
+  }
+
+  /* ── VALUES ── */
+  .values-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .value-card {
+    text-align: center; padding: 2rem 1.25rem;
+    border: 1px solid var(--gray-200); border-radius: 12px; transition: all .3s;
+  }
+  .value-card:hover { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-glow); transform: translateY(-4px); }
+  .value-icon {
+    width: 60px; height: 60px; border-radius: 50%; background: var(--orange-glow);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin: 0 auto 1.25rem;
+  }
+  .value-card h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: .5rem; }
+  body.lang-ka .value-card h4 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: .95rem; }
+  .value-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; }
+
+  /* ── COMPLIANCE ── */
+  .compliance-box {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    border-radius: 16px; padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    align-items: center; margin-top: 3rem;
+  }
+  .compliance-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 1rem; }
+  body.lang-ka .compliance-box h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.4rem; }
+  .compliance-box p { color: rgba(255,255,255,.6); line-height: 1.7; }
+  .compliance-list { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+  .compliance-list li {
+    display: flex; gap: .75rem; align-items: flex-start;
+    color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.5;
+  }
+  .compliance-list li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: .1rem; }
+
+  /* ── SERVICES PAGE ── */
+  .services-detailed { display: flex; flex-direction: column; gap: 5rem; margin-top: 3rem; }
+  .service-detail { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .service-detail:nth-child(even) { direction: rtl; }
+  .service-detail:nth-child(even) > * { direction: ltr; }
+  .service-detail-sidebar {
+    background: var(--navy); border-radius: 12px; padding: 2rem;
+    position: sticky; top: 90px;
+  }
+  .service-detail-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: var(--orange); opacity: .4;
+    line-height: 1; margin-bottom: .5rem; letter-spacing: .05em;
+  }
+  .service-detail-sidebar h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: .75rem; }
+  body.lang-ka .service-detail-sidebar h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.1rem; }
+  .service-detail-sidebar p { color: rgba(255,255,255,.5); font-size: .875rem; line-height: 1.6; }
+  .service-detail-sidebar .service-icon { margin-bottom: 1rem; }
+  .service-main h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--navy); margin-bottom: 1rem; }
+  body.lang-ka .service-main h2 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.5rem; }
+  .service-main > p { font-size: .975rem; line-height: 1.75; color: var(--gray-600); margin-bottom: 2rem; }
+  .service-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+  .feature-item {
+    padding: 1rem 1.25rem; background: var(--off-white);
+    border-radius: 8px; font-size: .875rem; color: var(--gray-800);
+    display: flex; gap: .6rem; align-items: flex-start; line-height: 1.5;
+  }
+  .feature-item::before { content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+  .service-clients {
+    background: var(--orange-glow); border: 1px solid rgba(249,115,22,.2);
+    border-radius: 8px; padding: 1rem 1.25rem; font-size: .875rem; color: var(--navy);
+  }
+  .service-clients strong { color: var(--orange); }
+  .services-divider { height: 1px; background: var(--gray-200); max-width: 1280px; margin: 0 auto; }
+
+  /* ── INDUSTRIES ── */
+  .industries-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+  .industry-card { border-radius: 14px; overflow: hidden; border: 1px solid var(--gray-200); transition: all .3s; }
+  .industry-card:hover { box-shadow: 0 12px 40px rgba(10,22,40,.12); transform: translateY(-4px); }
+  .industry-header { background: var(--navy); padding: 2rem 2rem 1.5rem; position: relative; overflow: hidden; }
+  .industry-header::after {
+    content: ''; position: absolute; bottom: -30px; right: -30px;
+    width: 100px; height: 100px; border-radius: 50%; background: rgba(249,115,22,.08);
+  }
+  .industry-type { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: .5rem; }
+  .industry-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: .5rem; }
+  body.lang-ka .industry-header h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.1rem; }
+  .industry-header p { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.5; }
+  .industry-icon-large { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2.5rem; opacity: .15; }
+  .industry-body { padding: 1.75rem 2rem; background: var(--white); }
+  .case-detail { display: flex; justify-content: space-between; font-size: .82rem; color: var(--gray-600); margin-bottom: 1rem; flex-wrap: wrap; gap: .5rem; }
+  .case-detail span { display: flex; align-items: center; gap: .3rem; }
+  .industry-services { list-style: none; margin-top: 1rem; }
+  .industry-services li {
+    font-size: .875rem; color: var(--gray-800); padding: .4rem 0;
+    border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: .5rem;
+  }
+  .industry-services li::before { content: '•'; color: var(--orange); font-size: 1rem; }
+  .industry-services li:last-child { border: none; }
+  .outcome-tag {
+    display: inline-block; background: rgba(34,197,94,.1); color: #15803d;
+    font-size: .72rem; font-weight: 600; padding: .25rem .7rem;
+    border-radius: 100px; letter-spacing: .04em; margin-top: 1rem;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+  .contact-info-card { background: var(--navy); border-radius: 16px; padding: 2.5rem; position: sticky; top: 90px; }
+  .contact-info-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: .5rem; }
+  body.lang-ka .contact-info-card h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.2rem; }
+  .contact-info-card > p { color: rgba(255,255,255,.5); font-size: .875rem; line-height: 1.6; margin-bottom: 2rem; }
+  .contact-detail { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .contact-detail:last-of-type { border: none; }
+  .contact-detail-icon {
+    width: 38px; height: 38px; flex-shrink: 0; background: rgba(249,115,22,.12);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .9rem;
+  }
+  .contact-detail-text { display: flex; flex-direction: column; gap: .15rem; }
+  .contact-detail-label { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
+  .contact-detail-val { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.4; }
+  .map-placeholder {
+    margin-top: 1.5rem; background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08); border-radius: 10px; height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: .5rem; color: rgba(255,255,255,.3); font-size: .85rem;
+  }
+  .map-placeholder span { font-size: 2rem; }
+  .contact-form-wrap { padding: .5rem 0; }
+  .contact-form-wrap h3 { font-family: 'DM Serif Display', serif; font-size: 1.7rem; color: var(--navy); margin-bottom: .5rem; }
+  body.lang-ka .contact-form-wrap h3 { font-family: 'Noto Sans Georgian', sans-serif; font-weight: 700; font-size: 1.4rem; }
+  .contact-form-wrap > p { color: var(--gray-600); font-size: .9rem; margin-bottom: 2rem; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
+  .form-group label { font-size: .78rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--navy); }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: .8rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 8px;
+    font-family: 'DM Sans', 'Noto Sans Georgian', sans-serif; font-size: .9rem;
+    color: var(--text); background: var(--white);
+    transition: border-color .2s, box-shadow .2s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-glow);
+  }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-submit-row { display: flex; justify-content: flex-start; }
+  .form-success {
+    display: none; padding: 1.25rem 1.5rem;
+    background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.25);
+    border-radius: 8px; color: #15803d; font-weight: 500; font-size: .9rem; margin-top: 1rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 1024px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: repeat(2,1fr); }
+    .service-detail { grid-template-columns: 1fr; }
+    .service-detail:nth-child(even) { direction: ltr; }
+    .service-detail-sidebar { position: static; }
+    .why-grid { grid-template-columns: 1fr; }
+    .mv-grid { grid-template-columns: 1fr; }
+    .compliance-box { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-info-card { position: static; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; gap: 0; }
+    .nav-links.open {
+      display: flex; position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(10,22,40,.98); padding: 1rem 2rem 2rem;
+      border-bottom: 1px solid rgba(249,115,22,.15);
+    }
+    .nav-links li a { padding: .75rem .5rem; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .hamburger { display: flex; }
+    .hero-stats { gap: 2rem; }
+    .hero-h1 { font-size: 3.5rem; }
+    body.lang-ka .hero-h1 { font-size: 2rem; }
+    .industries-grid { grid-template-columns: 1fr; }
+    .service-features { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 3.5rem 1.5rem; }
+    .lang-btn { padding: .3rem .6rem; font-size: .72rem; }
+  }
+  @media (max-width: 480px) {
+    .values-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn-primary, .hero-actions .btn-secondary { text-align: center; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-icon">⛑</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-en">Bausafety</span>
+        <span class="nav-logo-geo">ბაუსეიფთი</span>
+      </div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a onclick="showPage('home')" id="nav-home" class="active">
+        <span data-lang="en">Home</span><span data-lang="ka">მთავარი</span>
+      </a></li>
+      <li><a onclick="showPage('about')" id="nav-about">
+        <span data-lang="en">About Us</span><span data-lang="ka">ჩვენს შესახებ</span>
+      </a></li>
+      <li><a onclick="showPage('services')" id="nav-services">
+        <span data-lang="en">Services</span><span data-lang="ka">სერვისები</span>
+      </a></li>
+      <li><a onclick="showPage('industries')" id="nav-industries">
+        <span data-lang="en">Industries</span><span data-lang="ka">ინდუსტრიები</span>
+      </a></li>
+      <li><a onclick="showPage('contact')" id="nav-contact" class="nav-cta">
+        <span data-lang="en">Get Consultation</span><span data-lang="ka">კონსულტაცია</span>
+      </a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-ka" onclick="setLang('ka')">ქა</button>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════ HOME PAGE ════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-diag"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span data-lang="en">Georgia's Leading Safety Consultants</span>
+        <span data-lang="ka">საქართველოს წამყვანი უსაფრთხოების კონსულტანტები</span>
+      </div>
+      <h1 class="hero-h1">
+        <span data-lang="en">Your Safety<br>Is Our <span>Priority</span></span>
+        <span data-lang="ka">თქვენი უსაფრთხოება<br>ჩვენი <span>პრიორიტეტია</span></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang="en">Professional construction safety supervision, OHS compliance consulting, and risk management for Georgia's most demanding projects.</span>
+        <span data-lang="ka">პროფესიული სამშენებლო უსაფრთხოების ზედამხედველობა, შრომის დაცვის შესაბამისობის კონსულტაცია და რისკების მართვა საქართველოს ყველაზე მოთხოვნადი პროექტებისთვის.</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" onclick="showPage('contact')">
+          <span data-lang="en">Request Free Consultation →</span>
+          <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
+        </a>
+        <a class="btn-secondary" onclick="showPage('services')">
+          <span data-lang="en">View Our Services</span>
+          <span data-lang="ka">ჩვენი სერვისები</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">200+</div>
+          <div class="hero-stat-label"><span data-lang="en">Projects Supervised</span><span data-lang="ka">სამეთვალყურეო პროექტი</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">98%</div>
+          <div class="hero-stat-label"><span data-lang="en">Compliance Rate</span><span data-lang="ka">შესაბამისობის მაჩვენებელი</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">12+</div>
+          <div class="hero-stat-label"><span data-lang="en">Years Experience</span><span data-lang="ka">წლიანი გამოცდილება</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label"><span data-lang="en">Fatal Incidents on Our Sites</span><span data-lang="ka">ფატალური ინციდენტი ჩვენს ობიექტებზე</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" style="background: var(--off-white);">
+    <div class="section-inner">
+      <div style="max-width: 640px; margin-bottom: 1rem;">
+        <span class="section-label"><span data-lang="en">What We Do</span><span data-lang="ka">ჩვენი საქმიანობა</span></span>
+        <h2 class="section-title">
+          <span data-lang="en">Comprehensive Safety Solutions for Every Stage of Construction</span>
+          <span data-lang="ka">სრულყოფილი უსაფრთხოების გადაწყვეტილებები მშენებლობის ყველა ეტაპზე</span>
+        </h2>
+        <p class="section-desc">
+          <span data-lang="en">Bausafety provides end-to-end occupational health and safety services across Georgia — from initial risk assessments to ongoing site supervision and compliance management.</span>
+          <span data-lang="ka">ბაუსეიფთი გთავაზობთ შრომის ჯანმრთელობისა და უსაფრთხოების სრულ სერვისებს მთელ საქართველოში — პირველადი რისკების შეფასებიდან მიმდინარე ობიექტის ზედამხედველობამდე და შესაბამისობის მართვამდე.</span>
+        </p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">🦺</div>
+          <h3><span data-lang="en">Site Safety Supervision</span><span data-lang="ka">ობიექტის უსაფრთხოების ზედამხედველობა</span></h3>
+          <p><span data-lang="en">Dedicated safety officers present on your construction site to monitor compliance, prevent accidents, and ensure regulatory adherence in real time.</span><span data-lang="ka">გამოყოფილი უსაფრთხოების ოფიცრები თქვენს სამშენებლო ობიექტზე — შესაბამისობის მონიტორინგი, უბედური შემთხვევების პრევენცია და მარეგულირებელ მოთხოვნებთან შესაბამისობის უზრუნველყოფა რეალურ დროში.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3><span data-lang="en">Safety Audits & Inspections</span><span data-lang="ka">უსაფრთხოების აუდიტი და ინსპექტირება</span></h3>
+          <p><span data-lang="en">Thorough, systematic evaluation of your workplace safety practices against Georgian and international standards — with clear corrective action plans.</span><span data-lang="ka">სამუშაო ადგილის უსაფრთხოების პრაქტიკის საფუძვლიანი, სისტემატური შეფასება ქართული და საერთაშორისო სტანდარტების მიხედვით — მკაფიო კორექტირების სამოქმედო გეგმებით.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3><span data-lang="en">OHS Compliance Consulting</span><span data-lang="ka">შრომის დაცვის შესაბამისობის კონსულტაცია</span></h3>
+          <p><span data-lang="en">Expert guidance to align your operations with Georgian labor law, international ISO 45001 standards, and EU-aligned best practices.</span><span data-lang="ka">ექსპერტული სახელმძღვანელო მითითებები თქვენი ოპერაციების ქართულ შრომის კანონმდებლობასთან, ISO 45001 სტანდარტებთან და ევროპულ საუკეთესო პრაქტიკასთან შესაბამისობის უზრუნველსაყოფად.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3><span data-lang="en">Safety Documentation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაცია</span></h3>
+          <p><span data-lang="en">Preparation of all required safety documentation including safety plans, risk registers, emergency procedures, and regulatory submissions.</span><span data-lang="ka">ყველა საჭირო უსაფრთხოების დოკუმენტაციის მომზადება: უსაფრთხოების გეგმები, რისკების რეგისტრი, საგანგებო სიტუაციების პროცედურები და მარეგულირებელი წარდგინებები.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3><span data-lang="en">Employee Safety Training</span><span data-lang="ka">თანამშრომელთა უსაფრთხოების ტრენინგი</span></h3>
+          <p><span data-lang="en">Engaging, practical safety training programs for your workforce — available in Georgian, English, and Russian — from inductions to advanced modules.</span><span data-lang="ka">მიმზიდველი, პრაქტიკული უსაფრთხოების სასწავლო პროგრამები — ქართულ, ინგლისურ და რუსულ ენებზე — ინდუქციიდან დაწყებული გაფართოებული მოდულებამდე.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3><span data-lang="en">Risk Assessment</span><span data-lang="ka">რისკების შეფასება</span></h3>
+          <p><span data-lang="en">Systematic identification and evaluation of workplace hazards, with prioritized mitigation strategies tailored to your specific site conditions.</span><span data-lang="ka">სამუშაო ადგილის საფრთხეების სისტემატური იდენტიფიკაცია და შეფასება, პრიორიტეტული შემარბილებელი სტრატეგიებით, რომლებიც მორგებულია თქვენი კონკრეტული ობიექტის პირობებზე.</span></p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 2.5rem;">
+        <a class="btn-primary" onclick="showPage('services')">
+          <span data-lang="en">Explore All Services →</span>
+          <span data-lang="ka">ყველა სერვისი →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <span class="section-label"><span data-lang="en">Why Bausafety</span><span data-lang="ka">რატომ ბაუსეიფთი</span></span>
+          <h2 class="section-title light">
+            <span data-lang="en">Built on Experience,<br>Driven by Results</span>
+            <span data-lang="ka">გამოცდილებაზე დაფუძნებული,<br>შედეგებზე ორიენტირებული</span>
+          </h2>
+          <p class="section-desc light">
+            <span data-lang="en">We combine deep local knowledge with international best practices to deliver safety solutions that actually work in Georgia's construction environment.</span>
+            <span data-lang="ka">ვაერთიანებთ ღრმა ადგილობრივ ცოდნას საერთაშორისო საუკეთესო პრაქტიკასთან, რათა მივაწოდოთ უსაფრთხოების გადაწყვეტილებები, რომლებიც ნამდვილად მუშაობს საქართველოს სამშენებლო გარემოში.</span>
+          </p>
+          <div class="why-items reveal">
+            <div class="why-item">
+              <div class="why-item-icon">🇬🇪</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Deep Local Expertise</span><span data-lang="ka">ღრმა ადგილობრივი ექსპერტიზა</span></h4>
+                <p><span data-lang="en">In-depth knowledge of Georgian labor law, building codes, and regulatory landscape. We know what inspectors look for.</span><span data-lang="ka">ქართული შრომის კანონმდებლობის, სამშენებლო ნორმებისა და მარეგულირებელი გარემოს ღრმა ცოდნა. ჩვენ ვიცით, რას ეძებენ ინსპექტორები.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">🌍</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">International Standards</span><span data-lang="ka">საერთაშორისო სტანდარტები</span></h4>
+                <p><span data-lang="en">Implementation of ISO 45001, OHSAS 18001, and EU-aligned safety management systems adapted for local conditions.</span><span data-lang="ka">ISO 45001, OHSAS 18001 და ევროკავშირის სტანდარტებთან შესაბამისი უსაფრთხოების მართვის სისტემების დანერგვა ადგილობრივ პირობებთან ადაპტირებული სახით.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">⚡</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Rapid Response</span><span data-lang="ka">სწრაფი რეაგირება</span></h4>
+                <p><span data-lang="en">Same-day consultation available. On-site deployment within 24 hours for urgent safety concerns or incident investigations.</span><span data-lang="ka">იმავე დღის კონსულტაცია ხელმისაწვდომია. ობიექტზე გასვლა 24 საათის განმავლობაში გადაუდებელი უსაფრთხოების საკითხებისა და ინციდენტების გამოძიებისთვის.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">🤝</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Long-Term Partnership</span><span data-lang="ka">გრძელვადიანი პარტნიორობა</span></h4>
+                <p><span data-lang="en">We don't just audit and leave. Our ongoing monitoring programs keep your site compliant throughout the project lifecycle.</span><span data-lang="ka">ჩვენ მხოლოდ აუდიტს არ ვატარებთ და არ მივდივართ. ჩვენი მიმდინარე მონიტორინგის პროგრამები პროექტის სრულ სიცოცხლის ციკლში ობიექტს შესაბამისობაში ინარჩუნებს.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual">
+          <div class="why-visual-card reveal">
+            <div class="why-big-num">ISO</div>
+            <div class="why-big-label" style="font-size:1.5rem; color: var(--orange); font-family: 'Bebas Neue'; letter-spacing: .05em;">45001 Certified Practice</div>
+            <div class="why-divider"></div>
+            <p style="color: rgba(255,255,255,.5); font-size: .875rem; margin-bottom: 1.5rem;">
+              <span data-lang="en">Bausafety consultants operate to the highest internationally recognized occupational health & safety management standards.</span>
+              <span data-lang="ka">ბაუსეიფთის კონსულტანტები მუშაობენ საერთაშორისოდ აღიარებული შრომის ჯანმრთელობისა და უსაფრთხოების მართვის უმაღლეს სტანდარტებზე.</span>
+            </p>
+            <div class="cert-badges">
+              <span class="cert-badge">ISO 45001</span>
+              <span class="cert-badge">OHSAS 18001</span>
+              <span class="cert-badge"><span data-lang="en">Georgian Labor Code</span><span data-lang="ka">ქართული შრომის კოდექსი</span></span>
+              <span class="cert-badge">EU OHS Directives</span>
+              <span class="cert-badge">ILO Standards</span>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.08);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+                <div>
+                  <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">50+</div>
+                  <div style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;"><span data-lang="en">Active Clients</span><span data-lang="ka">აქტიური კლიენტი</span></div>
+                </div>
+                <div>
+                  <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">15+</div>
+                  <div style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;"><span data-lang="en">Expert Consultants</span><span data-lang="ka">ექსპერტი კონსულტანტი</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Client Testimonials</span><span data-lang="ka">კლიენტების შეფასებები</span></span>
+      <h2 class="section-title">
+        <span data-lang="en">Trusted Across Georgia's Construction Industry</span>
+        <span data-lang="ka">სანდო პარტნიორი საქართველოს სამშენებლო ინდუსტრიაში</span>
+      </h2>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"Bausafety transformed how we approach site safety. Their team was on-site every week, caught several critical issues before they became incidents, and helped us achieve full regulatory compliance ahead of schedule."</span>
+            <span data-lang="ka">„ბაუსეიფთიმ მთლიანად შეცვალა ჩვენი მიდგომა ობიექტის უსაფრთხოებასთან. მათი გუნდი ყოველ კვირა ობიექტზე იყო, გამოავლინა რამდენიმე კრიტიკული პრობლემა ინციდენტებამდე და დაგვეხმარა სრული მარეგულირებელი შესაბამისობის დაგეგმილ ვადაზე ადრე მიღწევაში."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">გმ</div>
+            <div>
+              <div class="author-name">გიორგი მგელაძე</div>
+              <div class="author-role"><span data-lang="en">Project Director, Tbilisi Residential Developer</span><span data-lang="ka">პროექტის დირექტორი, თბილისის საცხოვრებელი დეველოპერი</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"The safety audit conducted by Bausafety revealed gaps we didn't know existed. Their documentation package saved us enormous time when dealing with the labor inspection authority. Highly professional team."</span>
+            <span data-lang="ka">„ბაუსეიფთის მიერ ჩატარებულმა უსაფრთხოების აუდიტმა გამოავლინა ხარვეზები, რომელთა არსებობაც არ ვიცოდით. მათმა დოკუმენტაციის პაკეტმა დაგვიზოგა უზარმაზარი დრო შრომის ინსპექციასთან ურთიერთობისას. უაღრესად პროფესიული გუნდი."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ნხ</div>
+            <div>
+              <div class="author-name">ნინო ხაჩიძე</div>
+              <div class="author-role"><span data-lang="en">HSE Manager, Infrastructure Contractor</span><span data-lang="ka">HSE მენეჯერი, ინფრასტრუქტურის კონტრაქტორი</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"Our workers' safety training with Bausafety was genuinely engaging — not the usual boring lectures. The team connected with our crew in Georgian, explained real scenarios, and we saw immediate behavior changes on site."</span>
+            <span data-lang="ka">„ბაუსეიფთისთან ჩვენი მუშაკების უსაფრთხოების ტრენინგი ნამდვილად მიმზიდველი იყო — არა ჩვეულებრივი მოსაბეზრებელი ლექციები. გუნდმა ჩვენს მუშაკებთან ქართულად ისაუბრა, რეალური სცენარები განმარტა და ობიექტზე ქცევის მყისიერი ცვლილება დავინახეთ."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ლჯ</div>
+            <div>
+              <div class="author-name">ლაშა ჯანელიძე</div>
+              <div class="author-role"><span data-lang="en">General Contractor, Commercial Construction</span><span data-lang="ka">გენერალური კონტრაქტორი, კომერციული მშენებლობა</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-content reveal">
+      <h2>
+        <span data-lang="en">Ready to Make Your<br>Site <span>100% Safe</span>?</span>
+        <span data-lang="ka">მზად ხართ თქვენი ობიექტი<br><span>100% უსაფრთხო</span> გახადოთ?</span>
+      </h2>
+      <p>
+        <span data-lang="en">Schedule a free consultation with our safety experts. We'll assess your needs and propose a tailored solution within 24 hours.</span>
+        <span data-lang="ka">დაგეგმეთ უფასო კონსულტაცია ჩვენს უსაფრთხოების ექსპერტებთან. შევაფასებთ თქვენს საჭიროებებს და 24 საათის განმავლობაში შემოგთავაზებთ მორგებულ გადაწყვეტილებას.</span>
+      </p>
+      <a class="btn-primary" onclick="showPage('contact')">
+        <span data-lang="en">Request Free Consultation →</span>
+        <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="nav-logo" style="cursor:default;">
+          <div class="nav-logo-icon">⛑</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-en">Bausafety</span>
+            <span class="nav-logo-geo">ბაუსეიფთი</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          <span data-lang="en">Georgia's trusted partner in construction safety and occupational health consulting. Building safer workplaces, one site at a time.</span>
+          <span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებასა და შრომის ჯანმრთელობის კონსულტაციაში. ვქმნით უფრო უსაფრთხო სამუშაო ადგილებს — ობიექტი ობიექტის მიყოლებით.</span>
+        </p>
+      </div>
+      <div>
+        <h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4>
+        <ul>
+          <li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a></li>
+          <li><a onclick="showPage('about')"><span data-lang="en">About Us</span><span data-lang="ka">ჩვენს შესახებ</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a></li>
+          <li><a onclick="showPage('industries')"><span data-lang="en">Industries</span><span data-lang="ka">ინდუსტრიები</span></a></li>
+          <li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4>
+        <ul>
+          <li><a onclick="showPage('services')"><span data-lang="en">Site Safety Supervision</span><span data-lang="ka">ობიექტის ზედამხედველობა</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Audits</span><span data-lang="ka">უსაფრთხოების აუდიტი</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">OHS Compliance</span><span data-lang="ka">შრომის დაცვის შესაბამისობა</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Documentation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაცია</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Training</span><span data-lang="ka">უსაფრთხოების ტრენინგი</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4>
+        <div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span data-lang="ka">თბილისი, საქართველო</span></span></div>
+        <div class="footer-contact-item"><span>📞</span><span>+995 XXX XXX XXX</span></div>
+        <div class="footer-contact-item"><span>✉️</span><span>info@bausafety.ge</span></div>
+        <div class="footer-contact-item"><span>🕐</span><span><span data-lang="en">Mon–Fri: 9:00 – 18:00</span><span data-lang="ka">ორშ–პარ: 9:00 – 18:00</span></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა უფლება დაცულია.</span></span>
+      <span style="color: rgba(255,255,255,.3);"><span data-lang="en">Tbilisi, Georgia · Construction Safety Specialists</span><span data-lang="ka">თბილისი, საქართველო · სამშენებლო უსაფრთხოების სპეციალისტები</span></span>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════ ABOUT PAGE ════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <span data-lang="en">Home</span><span data-lang="ka">მთავარი</span>
+        <span> / </span>
+        <span><span data-lang="en">About Us</span><span data-lang="ka">ჩვენს შესახებ</span></span>
+      </div>
+      <h1>
+        <span data-lang="en">About <span>Bausafety</span></span>
+        <span data-lang="ka"><span>ბაუსეიფთის</span> შესახებ</span>
+      </h1>
+      <p>
+        <span data-lang="en">We are Georgia's dedicated construction safety partner — combining deep local expertise with international standards to protect workers and projects.</span>
+        <span data-lang="ka">ჩვენ ვართ საქართველოს სამშენებლო უსაფრთხოების გამოყოფილი პარტნიორი — ვაერთიანებთ ღრმა ადგილობრივ ექსპერტიზას საერთაშორისო სტანდარტებთან, რათა დავიცვათ მუშაკები და პროექტები.</span>
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Our Purpose</span><span data-lang="ka">ჩვენი მიზანი</span></span>
+      <h2 class="section-title"><span data-lang="en">Mission & Vision</span><span data-lang="ka">მისია და ხედვა</span></h2>
+      <div class="mv-grid reveal">
+        <div class="mv-card mission">
+          <h3><span data-lang="en">Our Mission</span><span data-lang="ka">ჩვენი მისია</span></h3>
+          <p><span data-lang="en">To protect the lives and wellbeing of construction workers across Georgia by delivering world-class occupational health and safety consulting — making compliance straightforward, prevention proactive, and safety culture the industry norm.</span><span data-lang="ka">სამშენებლო მუშაკების სიცოცხლისა და კეთილდღეობის დაცვა საქართველოში, მსოფლიო დონის შრომის ჯანმრთელობისა და უსაფრთხოების კონსულტაციის გაწევით — შესაბამისობის გამარტივებით, პრევენციის პროაქტიურობით და უსაფრთხოების კულტურის ინდუსტრიის ნორმად ქცევით.</span></p>
+          <div class="mv-large">M</div>
+        </div>
+        <div class="mv-card vision">
+          <h3><span data-lang="en">Our Vision</span><span data-lang="ka">ჩვენი ხედვა</span></h3>
+          <p><span data-lang="en">A Georgia where every construction worker returns home safely at the end of every working day. We envision a construction industry where safety is not a cost to be minimized, but a value to be invested in — and where Bausafety is the partner every serious company chooses.</span><span data-lang="ka">საქართველო, სადაც ყველა სამშენებლო მუშა ყოველი სამუშაო დღის ბოლოს სახლში უსაფრთხოდ ბრუნდება. გვისახავს სამშენებლო ინდუსტრია, სადაც უსაფრთხოება არ არის მინიმიზირებადი ხარჯი, არამედ ღირებულება, რომელშიც ინვესტირება ხდება — და სადაც ბაუსეიფთი არის პარტნიორი, რომელსაც ყოველი სერიოზული კომპანია ირჩევს.</span></p>
+          <div class="mv-large">V</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--off-white);">
+    <div class="section-inner">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <span class="section-label"><span data-lang="en">The Stakes</span><span data-lang="ka">მნიშვნელობა</span></span>
+          <h2 class="section-title"><span data-lang="en">Why Construction Safety Is Critical</span><span data-lang="ka">რატომ არის სამშენებლო უსაფრთხოება კრიტიკული</span></h2>
+          <p style="margin-top: 1rem; font-size: .975rem; line-height: 1.75; color: var(--gray-600);">
+            <span data-lang="en">Construction remains one of the world's most dangerous industries. In Georgia, the construction sector accounts for a disproportionate share of workplace accidents and fatalities — many of which are entirely preventable with proper safety management.</span>
+            <span data-lang="ka">მშენებლობა კვლავ რჩება მსოფლიოს ერთ-ერთ ყველაზე საშიშ ინდუსტრიად. საქართველოში სამშენებლო სექტორი პროპორციულად მეტ სამუშაო ადგილის ავარიებსა და სიკვდილიანობაზე მოდის — რომელთა უმეტესობა სრულად თავიდან ასაცილებელია სათანადო უსაფრთხოების მენეჯმენტის გამოყენებით.</span>
+          </p>
+          <p style="margin-top: 1rem; font-size: .975rem; line-height: 1.75; color: var(--gray-600);">
+            <span data-lang="en">Beyond the human cost, workplace incidents carry severe consequences for businesses: project delays, financial penalties, reputational damage, and legal liability. Proactive safety management is not just the right thing to do — it is a business imperative.</span>
+            <span data-lang="ka">ადამიანური ფასის გარდა, სამუშაო ადგილის ინციდენტები ბიზნესისთვის სერიოზულ შედეგებს იწვევს: პროექტის დაგვიანება, ფინანსური ჯარიმები, რეპუტაციული ზიანი და სამართლებრივი პასუხისმგებლობა. პროაქტიური უსაფრთხოების მართვა არა მხოლოდ სწორი საქციელია — ეს ბიზნეს იმპერატივია.</span>
+          </p>
+        </div>
+        <div class="reveal">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background: var(--navy); border-radius: 12px; padding: 1.75rem; text-align: center;">
+              <div style="font-family:'Bebas Neue'; font-size: 3rem; color: var(--orange); line-height: 1;">60%</div>
+              <div style="font-size: .8rem; color: rgba(255,255,255,.5); margin-top: .3rem; line-height: 1.4;"><span data-lang="en">of workplace fatalities occur in construction</span><span data-lang="ka">სამუშაო ადგილის ფატალური შემთხვევები მშენებლობაზე მოდის</span></div>
+            </div>
+            <div style="background: var(--orange); border-radius: 12px; padding: 1.75rem; text-align: center;">
+              <div style="font-family:'Bebas Neue'; font-size: 3rem; color: white; line-height: 1;">80%</div>
+              <div style="font-size: .8rem; color: rgba(255,255,255,.8); margin-top: .3rem; line-height: 1.4;"><span data-lang="en">of accidents are preventable with proper safety management</span><span data-lang="ka">ავარიები სათანადო უსაფრთხოების მართვით თავიდან ასაცილებელია</span></div>
+            </div>
+            <div style="background: var(--gray-100); border-radius: 12px; padding: 1.75rem; text-align: center;">
+              <div style="font-family:'Bebas Neue'; font-size: 3rem; color: var(--navy); line-height: 1;">5x</div>
+              <div style="font-size: .8rem; color: var(--gray-600); margin-top: .3rem; line-height: 1.4;"><span data-lang="en">ROI on every GEL invested in safety management</span><span data-lang="ka">ROI უსაფრთხოების მართვაში ინვესტირებულ ყოველ ლარზე</span></div>
+            </div>
+            <div style="background: var(--navy-light); border-radius: 12px; padding: 1.75rem; text-align: center;">
+              <div style="font-family:'Bebas Neue'; font-size: 3rem; color: var(--orange); line-height: 1;">↓30%</div>
+              <div style="font-size: .8rem; color: rgba(255,255,255,.5); margin-top: .3rem; line-height: 1.4;"><span data-lang="en">reduction in incidents after implementing OHS systems</span><span data-lang="ka">ინციდენტების შემცირება OHS სისტემების დანერგვის შემდეგ</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">What We Stand For</span><span data-lang="ka">ჩვენი ღირებულებები</span></span>
+      <h2 class="section-title"><span data-lang="en">Our Core Values</span><span data-lang="ka">ძირითადი ღირებულებები</span></h2>
+      <div class="values-grid reveal">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h4><span data-lang="en">Professionalism</span><span data-lang="ka">პროფესიონალიზმი</span></h4>
+          <p><span data-lang="en">Every engagement is delivered with technical precision, rigorous methodology, and the highest ethical standards.</span><span data-lang="ka">ყველა ჩართულობა ხორციელდება ტექნიკური სიზუსტით, მკაცრი მეთოდოლოგიით და ყველაზე მაღალი ეთიკური სტანდარტებით.</span></p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h4><span data-lang="en">Responsibility</span><span data-lang="ka">პასუხისმგებლობა</span></h4>
+          <p><span data-lang="en">We take ownership of safety outcomes on every project we touch. Our name means something — and we protect it.</span><span data-lang="ka">ჩვენ ვიღებთ პასუხისმგებლობას უსაფრთხოების შედეგებზე ყოველ პროექტში. ჩვენი სახელი ნიშნავს რაღაცას — და ჩვენ ვიცავთ მას.</span></p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔒</div>
+          <h4><span data-lang="en">Prevention</span><span data-lang="ka">პრევენცია</span></h4>
+          <p><span data-lang="en">Safety is not reactive. We identify and eliminate hazards before they cause harm — prevention, not paperwork.</span><span data-lang="ka">უსაფრთხოება არ არის რეაქტიული. ჩვენ ვიდენტიფიცირებთ და ვაღმოფხვრით საფრთხეებს ზიანის გამოწვევამდე — პრევენცია და არა ქაღალდი.</span></p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚖️</div>
+          <h4><span data-lang="en">Compliance</span><span data-lang="ka">შესაბამისობა</span></h4>
+          <p><span data-lang="en">We ensure your operations meet Georgian law and international standards — fully, correctly, and without shortcuts.</span><span data-lang="ka">ჩვენ ვუზრუნველვყოფთ, რომ თქვენი ოპერაციები აკმაყოფილებდეს ქართულ კანონმდებლობას და საერთაშორისო სტანდარტებს — სრულად, სწორად და გვერდის ავლების გარეშე.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--off-white);">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Local Context</span><span data-lang="ka">ადგილობრივი კონტექსტი</span></span>
+      <h2 class="section-title"><span data-lang="en">Compliance in Georgia: What You Need to Know</span><span data-lang="ka">შესაბამისობა საქართველოში: რა უნდა იცოდეთ</span></h2>
+      <div class="compliance-box reveal">
+        <div>
+          <h3><span data-lang="en">Georgia's OHS Framework</span><span data-lang="ka">საქართველოს შრომის დაცვის ჩარჩო</span></h3>
+          <p><span data-lang="en">Georgia's occupational safety landscape has evolved significantly in recent years. The Labour Safety Law, enforcement bodies, and alignment with EU standards create a complex compliance environment that demands specialist knowledge.</span><span data-lang="ka">საქართველოს შრომის უსაფრთხოების ლანდშაფტი ბოლო წლებში მნიშვნელოვნად განვითარდა. შრომის უსაფრთხოების კანონი, სამართალდამცავი ორგანოები და ევროკავშირის სტანდარტებთან შესაბამისობა ქმნის კომპლექსურ გარემოს, რომელიც სპეციალისტის ცოდნას მოითხოვს.</span></p>
+          <p style="margin-top: 1rem;"><span data-lang="en">The Labour Inspection Department actively monitors construction sites. Non-compliance carries penalties, project shutdowns, and in serious cases, criminal liability for company officers.</span><span data-lang="ka">შრომის ინსპექციის დეპარტამენტი აქტიურად მონიტორინგს უწევს სამშენებლო ობიექტებს. შეუსაბამობა გამოიწვევს ჯარიმებს, პროექტის გაჩერებას და სერიოზულ შემთხვევებში კომპანიის ოფიცრების სისხლისსამართლებრივ პასუხისმგებლობას.</span></p>
+          <div style="margin-top: 2rem;"><a class="btn-primary" onclick="showPage('contact')"><span data-lang="en">Discuss Your Compliance Needs →</span><span data-lang="ka">განიხილეთ თქვენი შესაბამისობის საჭიროებები →</span></a></div>
+        </div>
+        <ul class="compliance-list">
+          <li><span data-lang="en">Georgian Labour Safety Law & amendments fully navigated</span><span data-lang="ka">ქართული შრომის უსაფრთხოების კანონი და ცვლილებები სრულად</span></li>
+          <li><span data-lang="en">Labour Inspection Department compliance — no surprises</span><span data-lang="ka">შრომის ინსპექციის დეპარტამენტის შესაბამისობა — გაოცებების გარეშე</span></li>
+          <li><span data-lang="en">ISO 45001 Occupational Health & Safety Management Systems</span><span data-lang="ka">ISO 45001 შრომის ჯანმრთელობისა და უსაფრთხოების მართვის სისტემები</span></li>
+          <li><span data-lang="en">EU Directive alignment for international project requirements</span><span data-lang="ka">ევროკავშირის დირექტივების შესაბამისობა საერთაშორისო პროექტებისთვის</span></li>
+          <li><span data-lang="en">ILO safety conventions applicable to Georgian law</span><span data-lang="ka">ILO-ს უსაფრთხოების კონვენციები ქართული კანონმდებლობის ფარგლებში</span></li>
+          <li><span data-lang="en">Building code safety requirements and documentation</span><span data-lang="ka">სამშენებლო ნორმების უსაფრთხოების მოთხოვნები და დოკუმენტაცია</span></li>
+          <li><span data-lang="en">Mandatory workplace accident investigation procedures</span><span data-lang="ka">სამუშაო ადგილის ავარიების გამოძიების სავალდებულო პროცედურები</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="nav-logo" style="cursor:default;"><div class="nav-logo-icon">⛑</div><div class="nav-logo-text"><span class="nav-logo-en">Bausafety</span><span class="nav-logo-geo">ბაუსეიფთი</span></div></div>
+        <p class="footer-brand-desc"><span data-lang="en">Georgia's trusted partner in construction safety and occupational health consulting.</span><span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებასა და შრომის ჯანმრთელობის კონსულტაციაში.</span></p>
+      </div>
+      <div><h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4><ul><li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a></li><li><a onclick="showPage('about')"><span data-lang="en">About Us</span><span data-lang="ka">ჩვენს შესახებ</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a></li><li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4><ul><li><a onclick="showPage('services')"><span data-lang="en">Safety Supervision</span><span data-lang="ka">ობიექტის ზედამხედველობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Audits</span><span data-lang="ka">აუდიტი</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">OHS Compliance</span><span data-lang="ka">შრომის დაცვა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Training</span><span data-lang="ka">ტრენინგი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4><div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span data-lang="ka">თბილისი, საქართველო</span></span></div><div class="footer-contact-item"><span>📞</span><span>+995 XXX XXX XXX</span></div><div class="footer-contact-item"><span>✉️</span><span>info@bausafety.ge</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა უფლება დაცულია.</span></span></div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════ SERVICES PAGE ════════════════════════ -->
+<div id="page-services" class="page">
+  <div class="about-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span> <span>/ </span><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></div>
+      <h1><span data-lang="en">Our <span>Services</span></span><span data-lang="ka">ჩვენი <span>სერვისები</span></span></h1>
+      <p><span data-lang="en">End-to-end occupational health and safety solutions tailored to Georgia's construction environment and regulatory landscape.</span><span data-lang="ka">შრომის ჯანმრთელობისა და უსაფრთხოების სრული გადაწყვეტილებები, მორგებული საქართველოს სამშენებლო გარემოზე და მარეგულირებელ ლანდშაფტზე.</span></p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="services-detailed">
+
+        <div class="service-detail">
+          <div class="service-detail-sidebar">
+            <div class="service-detail-num">01</div>
+            <div class="service-icon">🦺</div>
+            <h3><span data-lang="en">Construction Site Safety Supervision</span><span data-lang="ka">სამშენებლო ობიექტის უსაფრთხოების ზედამხედველობა</span></h3>
+            <p><span data-lang="en">Dedicated safety professionals embedded in your project team — from groundbreaking to handover.</span><span data-lang="ka">გამოყოფილი უსაფრთხოების პროფესიონალები თქვენი პროექტის გუნდში — ძირის ჩაყრიდან გადაბარებამდე.</span></p>
+          </div>
+          <div class="service-main reveal">
+            <h2><span data-lang="en">Construction Site Safety Supervision</span><span data-lang="ka">სამშენებლო ობიექტის უსაფრთხოების ზედამხედველობა</span></h2>
+            <p><span data-lang="en">Bausafety provides qualified safety officers who are physically present on your construction site on a regular schedule — or full-time for larger projects. Our supervisors act as the eyes and ears of your safety management system, identifying hazards, enforcing procedures, and liaising directly with site management and workers.</span><span data-lang="ka">ბაუსეიფთი გთავაზობთ კვალიფიციურ უსაფრთხოების ოფიცრებს, რომლებიც ფიზიკურად ესწრებიან თქვენს სამშენებლო ობიექტს რეგულარულ განრიგზე — ან სრულ განაკვეთზე უფრო დიდი პროექტებისთვის. ჩვენი ზედამხედველები მოქმედებენ თქვენი უსაფრთხოების მართვის სისტემის თვალ-ყურად, ანომალიების გამოვლენით, პროცედურების შესრულებით და ობიექტის მენეჯმენტთან და მუშაკებთან პირდაპირი კავშირით.</span></p>
+            <div class="service-features" style="margin-top: 1.5rem;">
+              <div class="feature-item"><span data-lang="en">Daily hazard identification and correction</span><span data-lang="ka">ყოველდღიური საფრთხის იდენტიფიკაცია და კორექტირება</span></div>
+              <div class="feature-item"><span data-lang="en">PPE compliance monitoring and enforcement</span><span data-lang="ka">PPE-ს შესაბამისობის მონიტორინგი და აღსრულება</span></div>
+              <div class="feature-item"><span data-lang="en">Permit-to-work management</span><span data-lang="ka">სამუშაოს ნებართვის მართვა</span></div>
+              <div class="feature-item"><span data-lang="en">Near-miss recording and analysis</span><span data-lang="ka">სახიფათო სიტუაციების ჩაწერა და ანალიზი</span></div>
+              <div class="feature-item"><span data-lang="en">Labour inspection preparation</span><span data-lang="ka">შრომის ინსპექციისთვის მომზადება</span></div>
+              <div class="feature-item"><span data-lang="en">Weekly safety performance reports</span><span data-lang="ka">ყოველკვირეული უსაფრთხოების ანგარიშები</span></div>
+              <div class="feature-item"><span data-lang="en">Incident investigation and reporting</span><span data-lang="ka">ინციდენტების გამოძიება და ანგარიშგება</span></div>
+              <div class="feature-item"><span data-lang="en">Subcontractor safety coordination</span><span data-lang="ka">ქვეკონტრაქტორების უსაფრთხოების კოორდინაცია</span></div>
+            </div>
+            <div class="service-clients">
+              <strong><span data-lang="en">Ideal for:</span><span data-lang="ka">იდეალურია:</span></strong>
+              <span data-lang="en"> General contractors, developers with multi-phase projects, EPC contractors, international companies operating in Georgia</span>
+              <span data-lang="ka"> გენერალური კონტრაქტორები, მრავალფაზიანი პროექტების დეველოპერები, EPC კონტრაქტორები, საქართველოში მოქმედი საერთაშორისო კომპანიები</span>
+            </div>
+          </div>
+        </div>
+        <div class="services-divider"></div>
+
+        <div class="service-detail">
+          <div class="service-detail-sidebar">
+            <div class="service-detail-num">02</div>
+            <div class="service-icon">🔍</div>
+            <h3><span data-lang="en">Safety Audits & Risk Assessment</span><span data-lang="ka">უსაფრთხოების აუდიტი და რისკების შეფასება</span></h3>
+            <p><span data-lang="en">Systematic evaluation of your safety posture with clear, actionable recommendations.</span><span data-lang="ka">თქვენი უსაფრთხოების მდგომარეობის სისტემატური შეფასება მკაფიო, განხორციელებადი რეკომენდაციებით.</span></p>
+          </div>
+          <div class="service-main reveal">
+            <h2><span data-lang="en">Safety Audits & Risk Assessment</span><span data-lang="ka">უსაფრთხოების აუდიტი და რისკების შეფასება</span></h2>
+            <p><span data-lang="en">Our comprehensive safety audits provide an objective, evidence-based assessment of your organization's safety performance. We evaluate documentation, physical site conditions, management systems, worker behavior, and regulatory compliance — producing a detailed report with prioritized corrective actions.</span><span data-lang="ka">ჩვენი ყოვლისმომცველი უსაფრთხოების აუდიტები გთავაზობთ თქვენი ორგანიზაციის უსაფრთხოების მაჩვენებლის ობიექტურ, მტკიცებულებებზე დაფუძნებულ შეფასებას. ვაფასებთ დოკუმენტაციას, ფიზიკურ ობიექტის პირობებს, მართვის სისტემებს, მუშაკთა ქცევას და მარეგულირებელ შესაბამისობას.</span></p>
+            <div class="service-features" style="margin-top: 1.5rem;">
+              <div class="feature-item"><span data-lang="en">Full site safety audits (scheduled & unannounced)</span><span data-lang="ka">სრული ობიექტის უსაფრთხოების აუდიტები (დაგეგმილი და გაუფრთხილებელი)</span></div>
+              <div class="feature-item"><span data-lang="en">ISO 45001 gap analysis</span><span data-lang="ka">ISO 45001 ხარვეზების ანალიზი</span></div>
+              <div class="feature-item"><span data-lang="en">Job Safety Analysis (JSA)</span><span data-lang="ka">სამუშაოს უსაფრთხოების ანალიზი (JSA)</span></div>
+              <div class="feature-item"><span data-lang="en">Fire risk assessments</span><span data-lang="ka">ხანძრის რისკის შეფასება</span></div>
+              <div class="feature-item"><span data-lang="en">Working-at-height risk evaluations</span><span data-lang="ka">სიმაღლეზე მუშაობის რისკების შეფასება</span></div>
+              <div class="feature-item"><span data-lang="en">Formal risk register development</span><span data-lang="ka">ფორმალური რისკების რეგისტრის შემუშავება</span></div>
+            </div>
+            <div class="service-clients">
+              <strong><span data-lang="en">Ideal for:</span><span data-lang="ka">იდეალურია:</span></strong>
+              <span data-lang="en"> Companies preparing for labour inspections, organizations seeking ISO 45001 certification</span>
+              <span data-lang="ka"> შრომის ინსპექციისთვის მომზადებული კომპანიები, ISO 45001 სერტიფიკაციის მსურველი ორგანიზაციები</span>
+            </div>
+          </div>
+        </div>
+        <div class="services-divider"></div>
+
+        <div class="service-detail">
+          <div class="service-detail-sidebar">
+            <div class="service-detail-num">03</div>
+            <div class="service-icon">⚖️</div>
+            <h3><span data-lang="en">OHS Compliance Consulting</span><span data-lang="ka">შრომის დაცვის შესაბამისობის კონსულტაცია</span></h3>
+            <p><span data-lang="en">Navigate Georgia's regulatory landscape with confidence and total compliance assurance.</span><span data-lang="ka">ნავიგაცია საქართველოს მარეგულირებელ ლანდშაფტში ნდობით და სრული შესაბამისობის გარანტიით.</span></p>
+          </div>
+          <div class="service-main reveal">
+            <h2><span data-lang="en">OHS Compliance Consulting</span><span data-lang="ka">შრომის დაცვის შესაბამისობის კონსულტაცია</span></h2>
+            <p><span data-lang="en">Georgian occupational safety law is evolving rapidly, and staying compliant requires specialist knowledge. Bausafety's compliance consultants provide ongoing guidance to ensure your operations meet all current legal requirements — and prepare you for upcoming regulatory changes.</span><span data-lang="ka">ქართული შრომის უსაფრთხოების კანონმდებლობა სწრაფად ვითარდება და შესაბამისობის შენარჩუნება სპეციალისტის ცოდნას მოითხოვს. ბაუსეიფთის შესაბამისობის კონსულტანტები გთავაზობთ მიმდინარე სახელმძღვანელო მითითებებს, რათა თქვენი ოპერაციები აკმაყოფილებდეს ყველა მოქმედ სამართლებრივ მოთხოვნას.</span></p>
+            <div class="service-features" style="margin-top: 1.5rem;">
+              <div class="feature-item"><span data-lang="en">Labour Safety Law compliance mapping</span><span data-lang="ka">შრომის უსაფრთხოების კანონის შესაბამისობის კარტოგრაფია</span></div>
+              <div class="feature-item"><span data-lang="en">OHS management system design</span><span data-lang="ka">OHS მართვის სისტემის დიზაინი</span></div>
+              <div class="feature-item"><span data-lang="en">Regulatory authority liaison</span><span data-lang="ka">მარეგულირებელ ორგანოებთან კავშირი</span></div>
+              <div class="feature-item"><span data-lang="en">International standard alignment (ISO 45001)</span><span data-lang="ka">საერთაშორისო სტანდარტებთან შესაბამისობა (ISO 45001)</span></div>
+              <div class="feature-item"><span data-lang="en">Penalty avoidance strategy</span><span data-lang="ka">ჯარიმების თავიდან აცილების სტრატეგია</span></div>
+              <div class="feature-item"><span data-lang="en">Compliance calendar tracking</span><span data-lang="ka">შესაბამისობის კალენდრის მონიტორინგი</span></div>
+            </div>
+            <div class="service-clients">
+              <strong><span data-lang="en">Ideal for:</span><span data-lang="ka">იდეალურია:</span></strong>
+              <span data-lang="en"> Construction companies, industrial facilities, foreign-invested projects</span>
+              <span data-lang="ka"> სამშენებლო კომპანიები, სამრეწველო ობიექტები, უცხოური ინვესტიციის პროექტები</span>
+            </div>
+          </div>
+        </div>
+        <div class="services-divider"></div>
+
+        <div class="service-detail">
+          <div class="service-detail-sidebar">
+            <div class="service-detail-num">04</div>
+            <div class="service-icon">📋</div>
+            <h3><span data-lang="en">Safety Documentation Preparation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაციის მომზადება</span></h3>
+            <p><span data-lang="en">Complete, legally compliant safety documentation packages prepared to exact regulatory requirements.</span><span data-lang="ka">სრული, სამართლებრივად შესაბამისი უსაფრთხოების დოკუმენტაციის პაკეტები, მომზადებული ზუსტი მარეგულირებელი მოთხოვნების შესაბამისად.</span></p>
+          </div>
+          <div class="service-main reveal">
+            <h2><span data-lang="en">Safety Documentation Preparation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაციის მომზადება</span></h2>
+            <p><span data-lang="en">Inadequate or missing documentation is one of the most common reasons companies fail labour inspections and face penalties. Bausafety prepares comprehensive, professionally structured safety documentation that satisfies Georgian regulatory requirements and international standards.</span><span data-lang="ka">არასათანადო ან არქონი დოკუმენტაცია ერთ-ერთი ყველაზე გავრცელებული მიზეზია, რის გამოც კომპანიები ვერ ამდგებიან შრომის ინსპექციებში. ბაუსეიფთი ამზადებს ყოვლისმომცველ, პროფესიონალურად სტრუქტურირებულ უსაფრთხოების დოკუმენტაციას.</span></p>
+            <div class="service-features" style="margin-top: 1.5rem;">
+              <div class="feature-item"><span data-lang="en">Construction Safety Plans (OHS Plans)</span><span data-lang="ka">სამშენებლო უსაფრთხოების გეგმები (OHS გეგმები)</span></div>
+              <div class="feature-item"><span data-lang="en">Emergency Response & Evacuation Procedures</span><span data-lang="ka">საგანგებო რეაგირება და ევაკუაციის პროცედურები</span></div>
+              <div class="feature-item"><span data-lang="en">Safe Work Method Statements (SWMS)</span><span data-lang="ka">უსაფრთხო სამუშაო მეთოდების დეკლარაციები</span></div>
+              <div class="feature-item"><span data-lang="en">Safety induction and training records</span><span data-lang="ka">უსაფრთხოების ინდუქციისა და ტრენინგის ჩანაწერები</span></div>
+              <div class="feature-item"><span data-lang="en">Incident and near-miss reporting systems</span><span data-lang="ka">ინციდენტებისა და სახიფათო სიტუაციების ანგარიშგების სისტემები</span></div>
+              <div class="feature-item"><span data-lang="en">Hazardous substance registers</span><span data-lang="ka">სახიფათო ნივთიერებების რეგისტრები</span></div>
+            </div>
+            <div class="service-clients">
+              <strong><span data-lang="en">Ideal for:</span><span data-lang="ka">იდეალურია:</span></strong>
+              <span data-lang="en"> Contractors tendering for large projects, companies preparing for audits</span>
+              <span data-lang="ka"> კონტრაქტორები, რომლებიც ტენდერს წარადგენენ, კომპანიები, რომლებიც აუდიტებისთვის ემზადებიან</span>
+            </div>
+          </div>
+        </div>
+        <div class="services-divider"></div>
+
+        <div class="service-detail">
+          <div class="service-detail-sidebar">
+            <div class="service-detail-num">05</div>
+            <div class="service-icon">🎓</div>
+            <h3><span data-lang="en">Employee Safety Training</span><span data-lang="ka">თანამშრომელთა უსაფრთხოების ტრენინგი</span></h3>
+            <p><span data-lang="en">Practical, engaging safety training that changes behavior — in Georgian, English, and Russian.</span><span data-lang="ka">პრაქტიკული, მიმზიდველი უსაფრთხოების ტრენინგი, რომელიც ქცევას ცვლის — ქართულ, ინგლისურ და რუსულ ენებზე.</span></p>
+          </div>
+          <div class="service-main reveal">
+            <h2><span data-lang="en">Employee Safety Training</span><span data-lang="ka">თანამშრომელთა უსაფრთხოების ტრენინგი</span></h2>
+            <p><span data-lang="en">Effective safety training is about changing behavior, not just ticking boxes. Bausafety's training programs are built around real-world scenarios from Georgian construction sites, making them immediately relevant and memorable for your workforce.</span><span data-lang="ka">ეფექტური უსაფრთხოების ტრენინგი ქცევის შეცვლაზეა ორიენტირებული, არა უბრალოდ ყუთების შევსებაზე. ბაუსეიფთის სასწავლო პროგრამები შენდება ქართული სამშენებლო ობიექტების რეალური სცენარების გარშემო, რაც მათ უშუალოდ შესაბამისა და დასამახსოვრებელს ხდის.</span></p>
+            <div class="service-features" style="margin-top: 1.5rem;">
+              <div class="feature-item"><span data-lang="en">Site safety induction programs</span><span data-lang="ka">ობიექტის უსაფრთხოების ინდუქციური პროგრამები</span></div>
+              <div class="feature-item"><span data-lang="en">Working at height and fall prevention</span><span data-lang="ka">სიმაღლეზე მუშაობა და დაცემის პრევენცია</span></div>
+              <div class="feature-item"><span data-lang="en">Confined space entry procedures</span><span data-lang="ka">შეზღუდულ სივრცეში შეღწევის პროცედურები</span></div>
+              <div class="feature-item"><span data-lang="en">Fire safety and emergency response</span><span data-lang="ka">ხანძრის უსაფრთხოება და საგანგებო რეაგირება</span></div>
+              <div class="feature-item"><span data-lang="en">First aid and emergency procedures</span><span data-lang="ka">პირველადი დახმარება და საგანგებო პროცედურები</span></div>
+              <div class="feature-item"><span data-lang="en">Toolbox talks program design</span><span data-lang="ka">Toolbox talks პროგრამის დიზაინი</span></div>
+            </div>
+            <div class="service-clients">
+              <strong><span data-lang="en">Ideal for:</span><span data-lang="ka">იდეალურია:</span></strong>
+              <span data-lang="en"> All construction companies, industrial employers, organizations onboarding new workers</span>
+              <span data-lang="ka"> ყველა სამშენებლო კომპანია, სამრეწველო დამქირავებლები, ახალი მუშაკების ჩართვის ორგანიზაციები</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div class="cta-banner-content">
+      <h2>
+        <span data-lang="en">Not Sure Which <span>Service</span><br>You Need?</span>
+        <span data-lang="ka">დარწმუნებული არ ხართ<br>რომელი <span>სერვისი</span> გჭირდებათ?</span>
+      </h2>
+      <p><span data-lang="en">Contact us for a free 30-minute consultation. We'll assess your situation and recommend the right solution.</span><span data-lang="ka">დაგვიკავშირდით უფასო 30-წუთიანი კონსულტაციისთვის. შევაფასებთ თქვენს სიტუაციას და შემოგთავაზებთ სწორ გადაწყვეტილებას.</span></p>
+      <a class="btn-primary" onclick="showPage('contact')"><span data-lang="en">Talk to a Safety Expert →</span><span data-lang="ka">უსაფრთხოების ექსპერტთან საუბარი →</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="nav-logo" style="cursor:default;"><div class="nav-logo-icon">⛑</div><div class="nav-logo-text"><span class="nav-logo-en">Bausafety</span><span class="nav-logo-geo">ბაუსეიფთი</span></div></div><p class="footer-brand-desc"><span data-lang="en">Georgia's trusted partner in construction safety.</span><span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებაში.</span></p></div>
+      <div><h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4><ul><li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a></li><li><a onclick="showPage('about')"><span data-lang="en">About</span><span data-lang="ka">ჩვენს შესახებ</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a></li><li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4><ul><li><a onclick="showPage('services')"><span data-lang="en">Safety Supervision</span><span data-lang="ka">ზედამხედველობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Audits</span><span data-lang="ka">აუდიტი</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Compliance</span><span data-lang="ka">შესაბამისობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Training</span><span data-lang="ka">ტრენინგი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4><div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span data-lang="ka">თბილისი, საქართველო</span></span></div><div class="footer-contact-item"><span>📞</span><span>+995 XXX XXX XXX</span></div><div class="footer-contact-item"><span>✉️</span><span>info@bausafety.ge</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა უფლება დაცულია.</span></span></div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════ INDUSTRIES PAGE ════════════════════════ -->
+<div id="page-industries" class="page">
+  <div class="about-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span> <span>/ </span><span data-lang="en">Industries & Projects</span><span data-lang="ka">ინდუსტრიები და პროექტები</span></div>
+      <h1><span data-lang="en">Industries &<br><span>Projects</span></span><span data-lang="ka">ინდუსტრიები და<br><span>პროექტები</span></span></h1>
+      <p><span data-lang="en">From apartment towers to industrial plants — Bausafety delivers safety expertise across Georgia's most demanding construction sectors.</span><span data-lang="ka">სამბინაო კოშკებიდან სამრეწველო ქარხნებამდე — ბაუსეიფთი გთავაზობთ უსაფრთხოების ექსპერტიზას საქართველოს ყველაზე მოთხოვნად სამშენებლო სექტორებში.</span></p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Sectors We Serve</span><span data-lang="ka">ჩვენს მიერ მომსახურებული სექტორები</span></span>
+      <h2 class="section-title"><span data-lang="en">Project Experience Across Every Construction Type</span><span data-lang="ka">პროექტის გამოცდილება ყველა სახის მშენებლობაში</span></h2>
+      <p class="section-desc"><span data-lang="en">Our team has delivered safety management on projects ranging from 5-story residential buildings to large infrastructure works.</span><span data-lang="ka">ჩვენმა გუნდმა უსაფრთხოების მართვა განახორციელა 5-სართულიანი საცხოვრებელი შენობებიდან დიდ ინფრასტრუქტურულ სამუშაოებამდე.</span></p>
+
+      <div class="industries-grid reveal">
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon-large">🏗️</div>
+            <div class="industry-type"><span data-lang="en">Residential Construction</span><span data-lang="ka">საცხოვრებელი მშენებლობა</span></div>
+            <h3><span data-lang="en">Multi-Storey Residential Development</span><span data-lang="ka">მრავალსართულიანი საცხოვრებელი განვითარება</span></h3>
+            <p><span data-lang="en">Safety management for a 22-storey apartment complex in Saburtalo district, Tbilisi</span><span data-lang="ka">უსაფრთხოების მართვა 22-სართულიანი საბინაო კომპლექსისთვის საბურთალოს უბანში, თბილისი</span></p>
+          </div>
+          <div class="industry-body">
+            <div class="case-detail">
+              <span>📍 <span data-lang="en">Saburtalo, Tbilisi</span><span data-lang="ka">საბურთალო, თბილისი</span></span>
+              <span>⏱ <span data-lang="en">28 months</span><span data-lang="ka">28 თვე</span></span>
+              <span>👷 120 <span data-lang="en">workers</span><span data-lang="ka">მუშაკი</span></span>
+            </div>
+            <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;">
+              <span data-lang="en">Bausafety provided full-time safety supervision for a major residential project, managing working-at-height risks across 22 floors, coordinating safety between 6 subcontractors.</span>
+              <span data-lang="ka">ბაუსეიფთიმ უზრუნველყო სრული განაკვეთის უსაფრთხოების ზედამხედველობა მსხვილი საცხოვრებელი პროექტისთვის, მართა სიმაღლეზე მუშაობის რისკები 22 სართულზე, კოორდინაცია მოახდინა 6 ქვეკონტრაქტორს შორის.</span>
+            </p>
+            <ul class="industry-services">
+              <li><span data-lang="en">Full-time site safety supervision</span><span data-lang="ka">სრული განაკვეთის ობიექტის ზედამხედველობა</span></li>
+              <li><span data-lang="en">Working-at-height management program</span><span data-lang="ka">სიმაღლეზე მუშაობის მართვის პროგრამა</span></li>
+              <li><span data-lang="en">Crane and lifting operations oversight</span><span data-lang="ka">ამწის და სამაღლე სამუშაოების ზედამხედველობა</span></li>
+              <li><span data-lang="en">Monthly safety performance reporting</span><span data-lang="ka">ყოველთვიური უსაფრთხოების ანგარიშები</span></li>
+            </ul>
+            <div class="outcome-tag">✓ <span data-lang="en">Zero lost-time incidents | 100% Labour Inspection compliance</span><span data-lang="ka">ნულოვანი დაკარგული დრო | 100% შრომის ინსპექციის შესაბამისობა</span></div>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon-large">🏢</div>
+            <div class="industry-type"><span data-lang="en">Commercial Buildings</span><span data-lang="ka">კომერციული შენობები</span></div>
+            <h3><span data-lang="en">Class-A Office & Retail Complex</span><span data-lang="ka">A კლასის საოფისე და სავაჭრო კომპლექსი</span></h3>
+            <p><span data-lang="en">OHS consulting and documentation for a mixed-use commercial development in Vake</span><span data-lang="ka">OHS კონსულტაცია და დოკუმენტაცია ვაკეში კომერციული განვითარებისთვის</span></p>
+          </div>
+          <div class="industry-body">
+            <div class="case-detail">
+              <span>📍 <span data-lang="en">Vake, Tbilisi</span><span data-lang="ka">ვაკე, თბილისი</span></span>
+              <span>⏱ <span data-lang="en">18 months</span><span data-lang="ka">18 თვე</span></span>
+              <span>👷 85 <span data-lang="en">workers</span><span data-lang="ka">მუშაკი</span></span>
+            </div>
+            <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;">
+              <span data-lang="en">An international developer required full compliance with both Georgian law and their corporate OHS standards. Bausafety prepared bilingual documentation and conducted bi-weekly audits.</span>
+              <span data-lang="ka">საერთაშორისო დეველოპერს სჭირდებოდა სრული შესაბამისობა ქართულ კანონმდებლობასთან და კორპორატიულ OHS სტანდარტებთან. ბაუსეიფთიმ მოამზადა ორენოვანი დოკუმენტაცია.</span>
+            </p>
+            <ul class="industry-services">
+              <li><span data-lang="en">Complete OHS documentation package (GE/EN)</span><span data-lang="ka">OHS დოკუმენტაციის სრული პაკეტი (ქა/ინგ)</span></li>
+              <li><span data-lang="en">Bi-weekly safety audits and reporting</span><span data-lang="ka">ორკვირეული უსაფრთხოების აუდიტები</span></li>
+              <li><span data-lang="en">International corporate standard alignment</span><span data-lang="ka">საერთაშორისო კორპორატიული სტანდარტების შესაბამისობა</span></li>
+            </ul>
+            <div class="outcome-tag">✓ <span data-lang="en">Passed corporate HSE audit with zero major findings</span><span data-lang="ka">კორპორატიული HSE აუდიტი ჩაბარებული ნულოვანი მთავარი ხარვეზებით</span></div>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon-large">🛣️</div>
+            <div class="industry-type"><span data-lang="en">Infrastructure Projects</span><span data-lang="ka">ინფრასტრუქტურული პროექტები</span></div>
+            <h3><span data-lang="en">Road Rehabilitation & Bridge Works</span><span data-lang="ka">გზის რეაბილიტაცია და ხიდის სამუშაოები</span></h3>
+            <p><span data-lang="en">Safety oversight for a highway rehabilitation project in Kakheti region</span><span data-lang="ka">საავტომობილო გზის რეაბილიტაციის პროექტის უსაფრთხოების ზედამხედველობა კახეთის რეგიონში</span></p>
+          </div>
+          <div class="industry-body">
+            <div class="case-detail">
+              <span>📍 <span data-lang="en">Kakheti Region</span><span data-lang="ka">კახეთის რეგიონი</span></span>
+              <span>⏱ <span data-lang="en">14 months</span><span data-lang="ka">14 თვე</span></span>
+              <span>👷 60 <span data-lang="en">workers</span><span data-lang="ka">მუშაკი</span></span>
+            </div>
+            <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;">
+              <span data-lang="en">Linear infrastructure projects carry unique risks — traffic management, remote locations, and dispersed workforces. Our team designed a mobile safety supervision model.</span>
+              <span data-lang="ka">ხაზობრივ ინფრასტრუქტურულ პროექტებს აქვს უნიკალური რისკები — მოძრაობის მართვა, დაშორებული ადგილები, გაფანტული სამუშაო ძალა. ჩვენმა გუნდმა შეიმუშავა მობილური ზედამხედველობის მოდელი.</span>
+            </p>
+            <ul class="industry-services">
+              <li><span data-lang="en">Traffic management plan design</span><span data-lang="ka">მოძრაობის მართვის გეგმის დიზაინი</span></li>
+              <li><span data-lang="en">Mobile multi-site supervision model</span><span data-lang="ka">მობილური მრავალობიექტიანი ზედამხედველობის მოდელი</span></li>
+              <li><span data-lang="en">Night works safety procedures</span><span data-lang="ka">ღამის სამუშაოების უსაფრთხოების პროცედურები</span></li>
+            </ul>
+            <div class="outcome-tag">✓ <span data-lang="en">Zero public safety incidents | On-time delivery</span><span data-lang="ka">საზოგადოებრივი უსაფრთხოების ნულოვანი ინციდენტი | დროული მიწოდება</span></div>
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon-large">🏭</div>
+            <div class="industry-type"><span data-lang="en">Industrial Facilities</span><span data-lang="ka">სამრეწველო ობიექტები</span></div>
+            <h3><span data-lang="en">Food Processing Plant Construction</span><span data-lang="ka">სასურსათო გადამამუშავებელი ქარხნის მშენებლობა</span></h3>
+            <p><span data-lang="en">Comprehensive OHS program for a greenfield industrial facility in Rustavi</span><span data-lang="ka">ყოვლისმომცველი OHS პროგრამა ახალი სამრეწველო ობიექტისთვის რუსთავში</span></p>
+          </div>
+          <div class="industry-body">
+            <div class="case-detail">
+              <span>📍 <span data-lang="en">Rustavi, Georgia</span><span data-lang="ka">რუსთავი, საქართველო</span></span>
+              <span>⏱ <span data-lang="en">22 months</span><span data-lang="ka">22 თვე</span></span>
+              <span>👷 95 <span data-lang="en">workers</span><span data-lang="ka">მუშაკი</span></span>
+            </div>
+            <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;">
+              <span data-lang="en">Industrial construction demands specialist knowledge of chemical handling, high-voltage electrical works, and complex plant installation.</span>
+              <span data-lang="ka">სამრეწველო მშენებლობა მოითხოვს ქიმიური ნივთიერებების, მაღალი ძაბვის ელექტრო სამუშაოებისა და კომპლექსური ქარხნის მონტაჟის სპეციალისტ ცოდნას.</span>
+            </p>
+            <ul class="industry-services">
+              <li><span data-lang="en">HAZOP workshop facilitation</span><span data-lang="ka">HAZOP სემინარის ფასილიტაცია</span></li>
+              <li><span data-lang="en">Hot works and confined space programs</span><span data-lang="ka">ცხელი სამუშაოებისა და შეზღუდული სივრცის პროგრამები</span></li>
+              <li><span data-lang="en">Operational OHS handover package</span><span data-lang="ka">ოპერაციული OHS გადაბარების პაკეტი</span></li>
+            </ul>
+            <div class="outcome-tag">✓ <span data-lang="en">ISO 45001 ready at project completion</span><span data-lang="ka">ISO 45001-ისთვის მზად პროექტის დასრულებისას</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why-section">
+    <div class="section-inner">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-label"><span data-lang="en">Full Sector Coverage</span><span data-lang="ka">სრული სექტორული გადაფარვა</span></span>
+        <h2 class="section-title light" style="max-width: 100%; text-align: center;"><span data-lang="en">Every Project Type, Every Risk Profile</span><span data-lang="ka">ყველა სახის პროექტი, ყველა სახის რისკი</span></h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; text-align: center; margin-top: 3rem;" class="reveal">
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🏗️</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Residential</span><span data-lang="ka">საცხოვრებელი</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🏢</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Commercial</span><span data-lang="ka">კომერციული</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🛣️</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Infrastructure</span><span data-lang="ka">ინფრასტრუქტურა</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🏭</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Industrial</span><span data-lang="ka">სამრეწველო</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">⚡</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Energy</span><span data-lang="ka">ენერგეტიკა</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🏨</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Hospitality</span><span data-lang="ka">სტუმართმასპინძლობა</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🏥</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Healthcare</span><span data-lang="ka">ჯანდაცვა</span></div></div>
+        <div style="padding:1.5rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px;"><div style="font-size:2rem; margin-bottom:.75rem;">🔬</div><div style="font-size:.875rem; color:rgba(255,255,255,.7); font-weight:500;"><span data-lang="en">Manufacturing</span><span data-lang="ka">წარმოება</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div class="cta-banner-content">
+      <h2><span data-lang="en">Working on a <span>Project</span>?<br>Let's Talk Safety.</span><span data-lang="ka">მუშაობთ <span>პროექტზე</span>?<br>ვისაუბროთ უსაფრთხოებაზე.</span></h2>
+      <p><span data-lang="en">Tell us about your project and we'll propose a tailored safety solution.</span><span data-lang="ka">გვიამბეთ თქვენი პროექტის შესახებ და შემოგთავაზებთ მორგებულ უსაფრთხოების გადაწყვეტილებას.</span></p>
+      <a class="btn-primary" onclick="showPage('contact')"><span data-lang="en">Discuss Your Project →</span><span data-lang="ka">პროექტის განხილვა →</span></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="nav-logo" style="cursor:default;"><div class="nav-logo-icon">⛑</div><div class="nav-logo-text"><span class="nav-logo-en">Bausafety</span><span class="nav-logo-geo">ბაუსეიფთი</span></div></div><p class="footer-brand-desc"><span data-lang="en">Georgia's trusted partner in construction safety.</span><span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებაში.</span></p></div>
+      <div><h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4><ul><li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a></li><li><a onclick="showPage('about')"><span data-lang="en">About</span><span data-lang="ka">ჩვენს შესახებ</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a></li><li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4><ul><li><a onclick="showPage('services')"><span data-lang="en">Safety Supervision</span><span data-lang="ka">ზედამხედველობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Audits</span><span data-lang="ka">აუდიტი</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Compliance</span><span data-lang="ka">შესაბამისობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Training</span><span data-lang="ka">ტრენინგი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4><div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span data-lang="ka">თბილისი, საქართველო</span></span></div><div class="footer-contact-item"><span>📞</span><span>+995 XXX XXX XXX</span></div><div class="footer-contact-item"><span>✉️</span><span>info@bausafety.ge</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა უფლება დაცულია.</span></span></div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════ CONTACT PAGE ════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="about-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span> <span>/ </span><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></div>
+      <h1><span data-lang="en">Get in <span>Touch</span></span><span data-lang="ka"><span>დაგვიკავშირდით</span></span></h1>
+      <p><span data-lang="en">Request a free consultation, ask a question, or discuss your project's safety needs. Our team responds within 24 hours.</span><span data-lang="ka">მოითხოვეთ უფასო კონსულტაცია, დასვით კითხვა, ან განიხილეთ თქვენი პროექტის უსაფრთხოების საჭიროებები. ჩვენი გუნდი 24 საათის განმავლობაში გიპასუხებთ.</span></p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <h3><span data-lang="en">Contact Bausafety</span><span data-lang="ka">დაგვიკავშირდით</span></h3>
+          <p><span data-lang="en">Reach our safety experts by phone, email, or fill in the form. We're based in Tbilisi and serve clients across Georgia.</span><span data-lang="ka">დაუკავშირდით ჩვენს უსაფრთხოების ექსპერტებს ტელეფონით, ელ-ფოსტით ან შეავსეთ ფორმა. ჩვენ თბილისში ვართ და ემსახურებით კლიენტებს მთელ საქართველოში.</span></p>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label"><span data-lang="en">Office Location</span><span data-lang="ka">ოფისის მდებარეობა</span></div>
+              <div class="contact-detail-val"><span data-lang="en">Tbilisi, Georgia<br>Available for on-site visits nationwide</span><span data-lang="ka">თბილისი, საქართველო<br>ხელმისაწვდომია ობიექტზე ვიზიტებისთვის მთელ ქვეყანაში</span></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label"><span data-lang="en">Phone</span><span data-lang="ka">ტელეფონი</span></div>
+              <div class="contact-detail-val">+995 XXX XXX XXX<br><span style="font-size:.8rem; opacity:.6;"><span data-lang="en">Mon–Fri: 9:00 – 18:00</span><span data-lang="ka">ორშ–პარ: 9:00 – 18:00</span></span></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label"><span data-lang="en">Email</span><span data-lang="ka">ელ-ფოსტა</span></div>
+              <div class="contact-detail-val">info@bausafety.ge</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">⚡</div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label"><span data-lang="en">Emergency / Urgent</span><span data-lang="ka">გადაუდებელი</span></div>
+              <div class="contact-detail-val"><span data-lang="en">24-hour response for safety incidents</span><span data-lang="ka">24-საათიანი რეაგირება უსაფრთხოების ინციდენტებზე</span></div>
+            </div>
+          </div>
+          <div class="map-placeholder">
+            <span>🗺️</span>
+            <span data-lang="en">Google Maps — Tbilisi, Georgia</span>
+            <span data-lang="ka">Google Maps — თბილისი, საქართველო</span>
+          </div>
+          <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(249,115,22,.08); border: 1px solid rgba(249,115,22,.2); border-radius: 8px;">
+            <p style="font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.6;">
+              <span style="color: var(--orange); font-weight: 600;"><span data-lang="en">Free consultation available.</span><span data-lang="ka">უფასო კონსულტაცია ხელმისაწვდომია.</span></span><br>
+              <span data-lang="en">First consultation is always complimentary — no obligation, no hard sell.</span>
+              <span data-lang="ka">პირველი კონსულტაცია ყოველთვის უფასოა — ვალდებულებების გარეშე.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <h3><span data-lang="en">Request a Free Consultation</span><span data-lang="ka">მოითხოვეთ უფასო კონსულტაცია</span></h3>
+          <p><span data-lang="en">Fill in the form below and one of our safety consultants will be in touch within 24 hours.</span><span data-lang="ka">შეავსეთ ქვემოთ მოცემული ფორმა და ჩვენი უსაფრთხოების კონსულტანტი 24 საათის განმავლობაში დაგიკავშირდებათ.</span></p>
+
+          <form id="contactForm" onsubmit="submitForm(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name"><span data-lang="en">Full Name *</span><span data-lang="ka">სრული სახელი *</span></label>
+                <input type="text" id="name" name="name" placeholder="გიორგი ბერიძე / Giorgi Beridze" required>
+              </div>
+              <div class="form-group">
+                <label for="company"><span data-lang="en">Company *</span><span data-lang="ka">კომპანია *</span></label>
+                <input type="text" id="company" name="company" placeholder="Construction LLC" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone"><span data-lang="en">Phone Number *</span><span data-lang="ka">ტელეფონის ნომერი *</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+995 XXX XXX XXX" required>
+              </div>
+              <div class="form-group">
+                <label for="email"><span data-lang="en">Email Address</span><span data-lang="ka">ელ-ფოსტის მისამართი</span></label>
+                <input type="email" id="email" name="email" placeholder="email@company.ge">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service"><span data-lang="en">Service of Interest</span><span data-lang="ka">სასურველი სერვისი</span></label>
+              <select id="service" name="service">
+                <option value="">—</option>
+                <option><span data-lang="en">Site Safety Supervision</span></option>
+                <option><span data-lang="en">Safety Audit & Risk Assessment</span></option>
+                <option><span data-lang="en">OHS Compliance Consulting</span></option>
+                <option><span data-lang="en">Safety Documentation Preparation</span></option>
+                <option><span data-lang="en">Employee Safety Training</span></option>
+                <option><span data-lang="en">Not sure — need advice</span></option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message"><span data-lang="en">Tell Us About Your Project *</span><span data-lang="ka">გვიამბეთ თქვენი პროექტის შესახებ *</span></label>
+              <textarea id="message" name="message" placeholder="" required></textarea>
+            </div>
+            <div class="form-submit-row">
+              <button type="submit" class="btn-primary">
+                <span data-lang="en">Send Request →</span>
+                <span data-lang="ka">მოთხოვნის გაგზავნა →</span>
+              </button>
+            </div>
+            <div class="form-success" id="formSuccess">
+              ✓ <span data-lang="en">Thank you! We've received your request and will contact you within 24 hours.</span>
+              <span data-lang="ka">გმადლობთ! მივიღეთ თქვენი მოთხოვნა და 24 საათის განმავლობაში დაგიკავშირდებით.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--off-white);">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Common Questions</span><span data-lang="ka">ხშირად დასმული კითხვები</span></span>
+      <h2 class="section-title"><span data-lang="en">Frequently Asked Questions</span><span data-lang="ka">ხშირად დასმული კითხვები</span></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem;" class="reveal">
+        <div style="background: var(--white); border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-200);">
+          <h4 style="color: var(--navy); margin-bottom: .5rem; font-size: .95rem;"><span data-lang="en">How quickly can you mobilize to a site?</span><span data-lang="ka">რამდენ ხანში შეგიძლიათ ობიექტზე გასვლა?</span></h4>
+          <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;"><span data-lang="en">For standard projects, we can begin within 3–5 business days. For urgent situations, we can have a consultant on-site within 24 hours.</span><span data-lang="ka">სტანდარტული პროექტებისთვის, 3–5 სამუშაო დღეში შეგვიძლია დაწყება. გადაუდებელ შემთხვევებში, კონსულტანტი ობიექტზე 24 საათის განმავლობაში იქნება.</span></p>
+        </div>
+        <div style="background: var(--white); border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-200);">
+          <h4 style="color: var(--navy); margin-bottom: .5rem; font-size: .95rem;"><span data-lang="en">Do you work outside Tbilisi?</span><span data-lang="ka">მუშაობთ თბილისის გარეთ?</span></h4>
+          <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;"><span data-lang="en">Yes. Bausafety serves clients across all regions of Georgia — Kakheti, Adjara, Imereti, and beyond.</span><span data-lang="ka">დიახ. ბაუსეიფთი ემსახურება კლიენტებს საქართველოს ყველა რეგიონში — კახეთი, აჭარა, იმერეთი და სხვა.</span></p>
+        </div>
+        <div style="background: var(--white); border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-200);">
+          <h4 style="color: var(--navy); margin-bottom: .5rem; font-size: .95rem;"><span data-lang="en">What size projects do you work with?</span><span data-lang="ka">რა სახის პროექტებთან მუშაობთ?</span></h4>
+          <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;"><span data-lang="en">From small residential developments to large infrastructure projects. Our services are scalable to your project's size.</span><span data-lang="ka">მცირე საცხოვრებელი განვითარებებიდან დიდ ინფრასტრუქტურულ პროექტებამდე. ჩვენი სერვისები მასშტაბირებადია.</span></p>
+        </div>
+        <div style="background: var(--white); border-radius: 10px; padding: 1.5rem; border: 1px solid var(--gray-200);">
+          <h4 style="color: var(--navy); margin-bottom: .5rem; font-size: .95rem;"><span data-lang="en">Is the first consultation really free?</span><span data-lang="ka">პირველი კონსულტაცია მართლა უფასოა?</span></h4>
+          <p style="font-size: .875rem; color: var(--gray-600); line-height: 1.65;"><span data-lang="en">Yes, genuinely. We offer a complimentary 30-minute consultation with no obligation to proceed.</span><span data-lang="ka">დიახ, ნამდვილად. ვთავაზობთ 30-წუთიან კონსულტაციას ვალდებულებების გარეშე.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="nav-logo" style="cursor:default;"><div class="nav-logo-icon">⛑</div><div class="nav-logo-text"><span class="nav-logo-en">Bausafety</span><span class="nav-logo-geo">ბაუსეიფთი</span></div></div><p class="footer-brand-desc"><span data-lang="en">Georgia's trusted partner in construction safety.</span><span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებაში.</span></p></div>
+      <div><h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4><ul><li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a></li><li><a onclick="showPage('about')"><span data-lang="en">About</span><span data-lang="ka">ჩვენს შესახებ</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a></li><li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4><ul><li><a onclick="showPage('services')"><span data-lang="en">Safety Supervision</span><span data-lang="ka">ზედამხედველობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Audits</span><span data-lang="ka">აუდიტი</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Compliance</span><span data-lang="ka">შესაბამისობა</span></a></li><li><a onclick="showPage('services')"><span data-lang="en">Training</span><span data-lang="ka">ტრენინგი</span></a></li></ul></div>
+      <div><h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4><div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span data-lang="ka">თბილისი, საქართველო</span></span></div><div class="footer-contact-item"><span>📞</span><span>+995 XXX XXX XXX</span></div><div class="footer-contact-item"><span>✉️</span><span>info@bausafety.ge</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა უფლება დაცულია.</span></span></div>
+  </footer>
+</div>
+
+
+<script>
+  // ── LANGUAGE ──
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.body.classList.toggle('lang-ka', lang === 'ka');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ka').classList.toggle('active', lang === 'ka');
+    document.documentElement.lang = lang === 'ka' ? 'ka' : 'en';
+    localStorage.setItem('bausafety_lang', lang);
+  }
+
+  // ── PAGE NAVIGATION ──
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    document.querySelectorAll('.nav-links li a').forEach(a => a.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('navLinks').classList.remove('open');
+    setTimeout(initReveal, 100);
+  }
+
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ── STICKY NAV ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── SCROLL REVEAL ──
+  function initReveal() {
+    const activePage = document.querySelector('.page.active');
+    if (!activePage) return;
+    const els = activePage.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => observer.observe(el));
+  }
+
+  // ── FORM SUBMIT ──
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const name = document.getElementById('name').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!name || !company || !phone || !message) {
+      alert(currentLang === 'ka' ? 'გთხოვთ შეავსოთ ყველა სავალდებულო ველი.' : 'Please fill in all required fields.');
+      return;
+    }
+    form.style.opacity = '.4';
+    form.style.pointerEvents = 'none';
+    success.style.display = 'block';
+    setTimeout(() => {
+      form.reset();
+      form.style.opacity = '1';
+      form.style.pointerEvents = 'auto';
+      success.style.display = 'none';
+    }, 5000);
+  }
+
+  // ── INIT ──
+  document.addEventListener('DOMContentLoaded', () => {
+    // Restore last used language
+    const saved = localStorage.getItem('bausafety_lang');
+    if (saved === 'ka') setLang('ka');
+    initReveal();
+  });
+</script>
+</body>
+</html>
