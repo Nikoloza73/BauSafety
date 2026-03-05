@@ -56,14 +56,17 @@ const photos = [
   'viber_image_2022-05-12_20-59-11-656.jpg',
 ];
 
-const grid = document.querySelector('.gallery-grid');
+document.addEventListener('DOMContentLoaded', function() {
+  const grid = document.querySelector('#page-industries .gallery-grid');
+  if (!grid) return;
 
-photos.forEach((filename) => {
-  const item = document.createElement('div');
-  item.className = 'gallery-item';
-  item.innerHTML = `
-    <img src="${filename}" alt="Site photo" loading="lazy">
-    <div class="gallery-caption">${filename}</div>
-  `;
-  grid.appendChild(item);
+  photos.forEach((filename) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `
+      <img src="${filename}" alt="Site photo" loading="lazy">
+      <div class="gallery-caption">${filename}</div>
+    `;
+    grid.appendChild(item);
+  });
 });
