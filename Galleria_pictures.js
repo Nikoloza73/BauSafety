@@ -1,3 +1,5 @@
+console.log('gallery.js is loading');
+
 const photos = [
     '0V6A0925.JPG',
   '0V6A0926.JPG',
