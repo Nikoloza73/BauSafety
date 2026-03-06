@@ -79,4 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     grid.appendChild(item);
   });
+
+  videos.forEach((filename) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `
+      <video controls preload="metadata">
+        <source src="${filename}" type="video/mp4">
+      </video>
+      <div class="gallery-caption">${filename}</div>
+    `;
+    grid.appendChild(item);
+  });
 });
