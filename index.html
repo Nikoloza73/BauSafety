@@ -3050,7 +3050,8 @@
     </div>
 
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
       // ── LANGUAGE ──
       let currentLang = 'en';
 
@@ -3141,3 +3142,21 @@
       });
 
       // ── ONE-TIME POPUP ──
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!localStorage.getItem('bausafety_popup_seen')) {
+          document.getElementById('welcomePopup').style.display = 'flex';
+        }
+      });
+
+      function closePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
+        localStorage.setItem('bausafety_popup_seen', 'true');
+      }
+
+      // // Show popup if not seen before
+      // if (!localStorage.getItem('bausafety_popup_seen')) {
+      //   const popup = document.getElementById('welcomePopup');
+      //   popup.style.display = 'flex';
+      // }  
+  </script>
+  <script src="./Galleria_pictures.js"></script>
