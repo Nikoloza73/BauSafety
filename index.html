@@ -3043,126 +3043,131 @@
     <div id="welcomePopup"
       style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.6); align-items:center; justify-content:center;">
       <div>
-        style="background:#fff; border-radius:12px; max-width:480px; width:90%; padding:2.5rem; position:relative;
+        <div style="background:#fff; border-radius:12px; max-width:480px; width:90%; padding:2.5rem; position:relative;
         box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-        <button onclick="closePopup()"
-          style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#6b7280;">✕</button>
-        <h2 style="color:#0A1628; font-family:'Bebas Neue',sans-serif; font-size:1.8rem; margin-bottom:.75rem;">იხილეთ
-          შრომის უსაფრთხოების სპეციალისტის იმიტირებული გამოცდა: </h2>
-        <p style="color:#6b7280; line-height:1.6; margin-bottom:1.5rem;">Visit our <a
-            href="https://oshtesting.moh.gov.ge/iExam/public/exam"></a></p>
-        <button onclick="closePopup()"
-          style="background:#F97316; color:#fff; border:none; padding:.75rem 1.75rem; border-radius:8px; font-size:1rem; cursor:pointer; width:100%;">Get
-          Started →</button>
+          <button onclick="closePopup()"
+            style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#6b7280;">✕</button>
+          <h2 style="color:#0A1628; font-family:'Bebas Neue',sans-serif; font-size:1.8rem; margin-bottom:.75rem;">იხილეთ
+            შრომის უსაფრთხოების სპეციალისტის იმიტირებული გამოცდა: </h2>
+          <p style="color:#6b7280; line-height:1.6; margin-bottom:1.5rem;"><a
+              href="https://oshtesting.moh.gov.ge/iExam/public/exam" target="_blank"
+              style="color:#F97316; font-weight:600;">გამოცდის ბმული →</a></p>
+          <button onclick="closePopup()"
+            style="background:#F97316; color:#fff; border:none; padding:.75rem 1.75rem; border-radius:8px; font-size:1rem; cursor:pointer; width:100%;">Get
+            Started →</button>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <script>
-    // ── LANGUAGE ──
-    let currentLang = 'en';
+    <script>
+      // ── LANGUAGE ──
+      let currentLang = 'en';
 
-    function setLang(lang) {
-      currentLang = lang;
-      document.body.classList.toggle('lang-ka', lang === 'ka');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-ka').classList.toggle('active', lang === 'ka');
-      document.documentElement.lang = lang === 'ka' ? 'ka' : 'en';
-      localStorage.setItem('bausafety_lang', lang);
-    }
-
-    // ── PAGE NAVIGATION ──
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + id).classList.add('active');
-      document.querySelectorAll('.nav-links li a').forEach(a => a.classList.remove('active'));
-      const navEl = document.getElementById('nav-' + id);
-      if (navEl) navEl.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      document.getElementById('navLinks').classList.remove('open');
-      setTimeout(initReveal, 100);
-    }
-
-    // ── MOBILE MENU ──
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-
-    // ── STICKY NAV ──
-    window.addEventListener('scroll', () => {
-      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // ── SCROLL REVEAL ──
-    function initReveal() {
-      const activePage = document.querySelector('.page.active');
-      if (!activePage) return;
-      const els = activePage.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((e, i) => {
-          if (e.isIntersecting) {
-            setTimeout(() => e.target.classList.add('visible'), i * 80);
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      els.forEach(el => observer.observe(el));
-    }
-
-    // ── FORM SUBMIT ──
-    function submitForm(e) {
-      e.preventDefault();
-      const form = document.getElementById('contactForm');
-      const success = document.getElementById('formSuccess');
-      const name = document.getElementById('name').value.trim();
-      const company = document.getElementById('company').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!name || !company || !phone || !message) {
-        alert(currentLang === 'ka' ? 'გთხოვთ შეავსოთ ყველა სავალდებულო ველი.' : 'Please fill in all required fields.');
-        return;
+      function setLang(lang) {
+        currentLang = lang;
+        document.body.classList.toggle('lang-ka', lang === 'ka');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-ka').classList.toggle('active', lang === 'ka');
+        document.documentElement.lang = lang === 'ka' ? 'ka' : 'en';
+        localStorage.setItem('bausafety_lang', lang);
       }
-      form.style.opacity = '.4';
-      form.style.pointerEvents = 'none';
-      success.style.display = 'block';
-      setTimeout(() => {
-        form.reset();
-        form.style.opacity = '1';
-        form.style.pointerEvents = 'auto';
-        success.style.display = 'none';
-      }, 5000);
-    }
 
-    // ── INIT ──
-    document.addEventListener('DOMContentLoaded', () => {
-      // Restore last used language
-      const saved = localStorage.getItem('bausafety_lang');
-      if (saved === 'ka') setLang('ka');
-      initReveal();
-    });
-
-    // ── ONE-TIME POPUP ──
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!localStorage.getItem('bausafety_popup_seen')) {
-        document.getElementById('welcomePopup').style.display = 'flex';
+      // ── PAGE NAVIGATION ──
+      function showPage(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page-' + id).classList.add('active');
+        document.querySelectorAll('.nav-links li a').forEach(a => a.classList.remove('active'));
+        const navEl = document.getElementById('nav-' + id);
+        if (navEl) navEl.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('navLinks').classList.remove('open');
+        setTimeout(initReveal, 100);
       }
-    });
 
-    function closePopup() {
-      document.getElementById('welcomePopup').style.display = 'none';
-      localStorage.setItem('bausafety_popup_seen', 'true');
-    }
+      // ── MOBILE MENU ──
+      function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('open');
+      }
 
-    // // Show popup if not seen before
-    // if (!localStorage.getItem('bausafety_popup_seen')) {
-    //   const popup = document.getElementById('welcomePopup');
-    //   popup.style.display = 'flex';
-    // }
-  </script>
-  <script src="Galleria_pictures.js"></script>
+      // ── STICKY NAV ──
+      window.addEventListener('scroll', () => {
+        document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+      });
+
+      // ── SCROLL REVEAL ──
+      function initReveal() {
+        const activePage = document.querySelector('.page.active');
+        if (!activePage) return;
+        const els = activePage.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add('visible'), i * 80);
+              observer.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        els.forEach(el => observer.observe(el));
+      }
+
+      // ── FORM SUBMIT ──
+      function submitForm(e) {
+        e.preventDefault();
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccess');
+        const name = document.getElementById('name').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if (!name || !company || !phone || !message) {
+          alert(currentLang === 'ka' ? 'გთხოვთ შეავსოთ ყველა სავალდებულო ველი.' : 'Please fill in all required fields.');
+          return;
+        }
+        form.style.opacity = '.4';
+        form.style.pointerEvents = 'none';
+        success.style.display = 'block';
+        setTimeout(() => {
+          form.reset();
+          form.style.opacity = '1';
+          form.style.pointerEvents = 'auto';
+          success.style.display = 'none';
+        }, 5000);
+      }
+
+      // ── INIT ──
+      function closePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
+        localStorage.setItem('bausafety_popup_seen', 'true');
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        // Restore last used language
+        const saved = localStorage.getItem('bausafety_lang');
+        if (saved === 'ka') setLang('ka');
+        initReveal();
+      });
+
+      // ── ONE-TIME POPUP ──
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!localStorage.getItem('bausafety_popup_seen')) {
+          document.getElementById('welcomePopup').style.display = 'flex';
+        }
+      });
+
+      function closePopup() {
+        document.getElementById('welcomePopup').style.display = 'none';
+        localStorage.setItem('bausafety_popup_seen', 'true');
+      }
+
+      // // Show popup if not seen before
+      // if (!localStorage.getItem('bausafety_popup_seen')) {
+      //   const popup = document.getElementById('welcomePopup');
+      //   popup.style.display = 'flex';
+      // }
+    </script>
+    <script src="Galleria_pictures.js"></script>
 </body>
 
 </html>
