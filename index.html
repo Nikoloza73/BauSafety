@@ -3043,11 +3043,14 @@
     <div id="welcomePopup"
       style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.6); align-items:center; justify-content:center;">
       <div>
-        style="background:#fff; border-radius:12px; max-width:480px; width:90%; padding:2.5rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+        style="background:#fff; border-radius:12px; max-width:480px; width:90%; padding:2.5rem; position:relative;
+        box-shadow:0 20px 60px rgba(0,0,0,0.3);">
         <button onclick="closePopup()"
           style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#6b7280;">✕</button>
-        <h2 style="color:#0A1628; font-family:'Bebas Neue',sans-serif; font-size:1.8rem; margin-bottom:.75rem;">იხილეთ შრომის უსაფრთხოების სპეციალისტის იმიტირებული გამოცდა: </h2>
-        <p style="color:#6b7280; line-height:1.6; margin-bottom:1.5rem;">Visit our <a href="https://oshtesting.moh.gov.ge/iExam/public/exam"></a></p>
+        <h2 style="color:#0A1628; font-family:'Bebas Neue',sans-serif; font-size:1.8rem; margin-bottom:.75rem;">იხილეთ
+          შრომის უსაფრთხოების სპეციალისტის იმიტირებული გამოცდა: </h2>
+        <p style="color:#6b7280; line-height:1.6; margin-bottom:1.5rem;">Visit our <a
+            href="https://oshtesting.moh.gov.ge/iExam/public/exam"></a></p>
         <button onclick="closePopup()"
           style="background:#F97316; color:#fff; border:none; padding:.75rem 1.75rem; border-radius:8px; font-size:1rem; cursor:pointer; width:100%;">Get
           Started →</button>
@@ -3140,16 +3143,24 @@
     });
 
     // ── ONE-TIME POPUP ──
-function closePopup() {
-  document.getElementById('welcomePopup').style.display = 'none';
-  localStorage.setItem('bausafety_popup_seen', 'true');
-}
 
-// Show popup if not seen before
-if (!localStorage.getItem('bausafety_popup_seen')) {
-  const popup = document.getElementById('welcomePopup');
-  popup.style.display = 'flex';
-}
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('bausafety_popup_seen')) {
+        document.getElementById('welcomePopup').style.display = 'flex';
+      }
+    });
+
+    function closePopup() {
+      document.getElementById('welcomePopup').style.display = 'none';
+      localStorage.setItem('bausafety_popup_seen', 'true');
+    }
+
+    // // Show popup if not seen before
+    // if (!localStorage.getItem('bausafety_popup_seen')) {
+    //   const popup = document.getElementById('welcomePopup');
+    //   popup.style.display = 'flex';
+    // }
   </script>
   <script src="Galleria_pictures.js"></script>
 </body>
