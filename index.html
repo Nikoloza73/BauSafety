@@ -3141,18 +3141,6 @@
         }
       });
 
-      // ── ONE-TIME POPUP ──
-      document.addEventListener('DOMContentLoaded', function () {
-        if (!localStorage.getItem('bausafety_popup_seen')) {
-          document.getElementById('welcomePopup').style.display = 'flex';
-        }
-      });
-
-      function closePopup() {
-        document.getElementById('welcomePopup').style.display = 'none';
-        localStorage.setItem('bausafety_popup_seen', 'true');
-      }
-
       // // Show popup if not seen before
       // if (!localStorage.getItem('bausafety_popup_seen')) {
       //   const popup = document.getElementById('welcomePopup');
