@@ -4,7 +4,6 @@ const videos = [
   '0-02-0b-cca0c6f6dc79dcf2ccfccf13b6625dfac916f6a55d73641d65b9404c64c41734_4d4ff21666e5c6b8 (2).mp4',
   'bausafety video.mp4',
   'saswavlo centri.mp4',
-  'იმედი saswavlo centri.mp4',
   'პრაქტიკული უნიქსში.mp4',
   'სერტიფიკატების გადაცემა.mp4',
 ];
