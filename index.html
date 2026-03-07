@@ -3145,6 +3145,9 @@
         const saved = localStorage.getItem('bausafety_lang');
         if (saved === 'ka') setLang('ka');
         initReveal();
+        if (!localStorage.getItem('bausafety_popup_seen')) {
+          document.getElementById('welcomePopup').style.display = 'flex';
+        }
       });
 
       // ── ONE-TIME POPUP ──
