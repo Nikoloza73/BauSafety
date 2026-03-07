@@ -3150,11 +3150,19 @@
         localStorage.setItem("bausafety_popup_seen", "true");
       }
       document.addEventListener("DOMContentLoaded", function () {
+
         const popup = document.getElementById("welcomePopup");
 
+        if (!popup) {
+          console.log("Popup NOT found");
+          return;
+        }
+
         if (!localStorage.getItem("bausafety_popup_seen")) {
+          console.log("Showing popup");
           popup.style.display = "flex";
         }
+
       });
 
       // // Show popup if not seen before
