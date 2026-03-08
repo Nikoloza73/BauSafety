@@ -1674,6 +1674,61 @@
         display: block;
       }
     }
+
+    /* ── HERO VIDEO LAYOUT ── */
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      width: 100%;
+    }
+
+    .hero-text-col {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .hero-video-col {
+      flex: 0 0 480px;
+      max-width: 480px;
+    }
+
+    .hero-video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(249, 115, 22, 0.2);
+      animation: fadeInUp .6s .35s ease both;
+    }
+
+    .hero-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-video-col {
+        flex: 0 0 340px;
+        max-width: 340px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .hero-video-col {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -1741,30 +1796,45 @@
       <div class="hero-grid"></div>
       <div class="hero-diag"></div>
       <div class="hero-content">
-        <div class="hero-badge">
-          <span data-lang="en">Georgia's Leading Safety Consultants</span>
-          <span data-lang="ka">საქართველოს წამყვანი უსაფრთხოების კონსულტანტები</span>
-        </div>
-        <h1 class="hero-h1">
-          <span data-lang="en">Your Safety<br>Is Our <span>Priority</span></span>
-          <span data-lang="ka">თქვენი უსაფრთხოება<br>ჩვენი <span>პრიორიტეტია</span></span>
-        </h1>
-        <p class="hero-sub">
-          <span data-lang="en">Professional construction safety supervision, OHS compliance consulting, and risk
-            management for Georgia's most demanding projects.</span>
-          <span data-lang="ka">პროფესიული სამშენებლო უსაფრთხოების ზედამხედველობა, შრომის დაცვის შესაბამისობის
-            კონსულტაცია და რისკების მართვა საქართველოს ყველაზე მოთხოვნადი პროექტებისთვის.</span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn-primary" onclick="showPage('contact')">
-            <span data-lang="en">Request Free Consultation →</span>
-            <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
-          </a>
-          <a class="btn-secondary" onclick="showPage('services')">
-            <span data-lang="en">View Our Services</span>
-            <span data-lang="ka">ჩვენი სერვისები</span>
-          </a>
-        </div>
+        <div class="hero-layout">
+
+          <!-- LEFT: Text content -->
+          <div class="hero-text-col">
+            <div class="hero-badge">
+              <span data-lang="en">Georgia's Leading Safety Consultants</span>
+              <span data-lang="ka">საქართველოს წამყვანი უსაფრთხოების კონსულტანტები</span>
+            </div>
+            <h1 class="hero-h1">
+              <span data-lang="en">Your Safety<br>Is Our <span>Priority</span></span>
+              <span data-lang="ka">თქვენი უსაფრთხოება<br>ჩვენი <span>პრიორიტეტია</span></span>
+            </h1>
+            <p class="hero-sub">
+              <span data-lang="en">Professional construction safety supervision, OHS compliance consulting, and risk
+                management for Georgia's most demanding projects.</span>
+              <span data-lang="ka">პროფესიული სამშენებლო უსაფრთხოების ზედამხედველობა, შრომის დაცვის შესაბამისობის
+                კონსულტაცია და რისკების მართვა საქართველოს ყველაზე მოთხოვნადი პროექტებისთვის.</span>
+            </p>
+            <div class="hero-actions">
+              <a class="btn-primary" onclick="showPage('contact')">
+                <span data-lang="en">Request Free Consultation →</span>
+                <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
+              </a>
+              <a class="btn-secondary" onclick="showPage('services')">
+                <span data-lang="en">View Our Services</span>
+                <span data-lang="ka">ჩვენი სერვისები</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Video -->
+          <div class="hero-video-col">
+            <div class="hero-video-wrapper">
+              <video src="your-video-file.mp4" muted controls playsinline preload="metadata"></video>
+            </div>
+          </div>
+
+        </div><!-- end .hero-layout -->
+
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="hero-stat-num">200+</div>
