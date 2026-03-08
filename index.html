@@ -322,6 +322,19 @@
       width: 100%;
     }
 
+    .hero-video-box {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-video-box video {
+      width: 500px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -1786,6 +1799,13 @@
             <div class="hero-stat-label"><span data-lang="en">Fatal Incidents on Our Sites</span><span
                 data-lang="ka">ფატალური ინციდენტი ჩვენს ობიექტებზე</span></div>
           </div>
+        </div>
+
+        <!-- HERO VIDEO -->
+        <div class="hero-video-box">
+          <video autoplay muted loop playsinline>
+            <source src="bausafety video.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
