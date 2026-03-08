@@ -3148,9 +3148,12 @@
   // ── INIT ──
   function closePopup() {
     const popup = document.getElementById("welcomePopup");
+
     if (popup) {
-      popup.remove(); // completely removes popup from page
+      popup.style.display = "none";
     }
+
+    window.dispatchEvent(new Event('resize'));
   }
   document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("welcomePopup");
