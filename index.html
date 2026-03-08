@@ -314,12 +314,26 @@
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 8rem 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-left {
+      flex: 1;
+    }
+
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-right video {
       width: 100%;
+      max-width: 520px;
+      border-radius: 12px;
     }
 
     .hero-video-box video {
@@ -1754,422 +1768,435 @@
       <div class="hero-grid"></div>
       <div class="hero-diag"></div>
       <div class="hero-content">
-        <div class="hero-badge">
-          <span data-lang="en">Georgia's Leading Safety Consultants</span>
-          <span data-lang="ka">საქართველოს წამყვანი უსაფრთხოების კონსულტანტები</span>
-        </div>
-        <h1 class="hero-h1">
-          <span data-lang="en">Your Safety<br>Is Our <span>Priority</span></span>
-          <span data-lang="ka">თქვენი უსაფრთხოება<br>ჩვენი <span>პრიორიტეტია</span></span>
-        </h1>
-        <p class="hero-sub">
-          <span data-lang="en">Professional construction safety supervision, OHS compliance consulting, and risk
-            management for Georgia's most demanding projects.</span>
-          <span data-lang="ka">პროფესიული სამშენებლო უსაფრთხოების ზედამხედველობა, შრომის დაცვის შესაბამისობის
-            კონსულტაცია და რისკების მართვა საქართველოს ყველაზე მოთხოვნადი პროექტებისთვის.</span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn-primary" onclick="showPage('contact')">
-            <span data-lang="en">Request Free Consultation →</span>
-            <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
-          </a>
-          <a class="btn-secondary" onclick="showPage('services')">
-            <span data-lang="en">View Our Services</span>
-            <span data-lang="ka">ჩვენი სერვისები</span>
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num">200+</div>
-            <div class="hero-stat-label"><span data-lang="en">Projects Supervised</span><span
-                data-lang="ka">სამეთვალყურეო პროექტი</span></div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">98%</div>
-            <div class="hero-stat-label"><span data-lang="en">Compliance Rate</span><span data-lang="ka">შესაბამისობის
-                მაჩვენებელი</span></div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">12+</div>
-            <div class="hero-stat-label"><span data-lang="en">Years Experience</span><span data-lang="ka">წლიანი
-                გამოცდილება</span></div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">0</div>
-            <div class="hero-stat-label"><span data-lang="en">Fatal Incidents on Our Sites</span><span
-                data-lang="ka">ფატალური ინციდენტი ჩვენს ობიექტებზე</span></div>
+        <div class="hero-left">
+          <!-- your text -->
+          <h1>Your Safety Is Our Priority</h1>
+          <div class="hero-buttons">
           </div>
         </div>
-
-        <!-- HERO VIDEO -->
-        <div class="hero-video-box">
+        <div class="hero-right">
           <video controls>
             <source src="bausafety video.mp4" type="video/mp4">
           </video>
         </div>
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section" style="background: var(--off-white);">
-      <div class="section-inner">
-        <div style="max-width: 640px; margin-bottom: 1rem;">
-          <span class="section-label"><span data-lang="en">What We Do</span><span data-lang="ka">ჩვენი
-              საქმიანობა</span></span>
-          <h2 class="section-title">
-            <span data-lang="en">Comprehensive Safety Solutions for Every Stage of Construction</span>
-            <span data-lang="ka">სრულყოფილი უსაფრთხოების გადაწყვეტილებები მშენებლობის ყველა ეტაპზე</span>
-          </h2>
-          <p class="section-desc">
-            <span data-lang="en">Bausafety provides end-to-end occupational health and safety services across Georgia —
-              from initial risk assessments to ongoing site supervision and compliance management.</span>
-            <span data-lang="ka">ბაუსეიფთი გთავაზობთ შრომის ჯანმრთელობისა და უსაფრთხოების სრულ სერვისებს მთელ
-              საქართველოში — პირველადი რისკების შეფასებიდან მიმდინარე ობიექტის ზედამხედველობამდე და შესაბამისობის
-              მართვამდე.</span>
-          </p>
-        </div>
-        <div class="services-grid reveal">
-          <div class="service-card">
-            <div class="service-icon">🦺</div>
-            <h3><span data-lang="en">Site Safety Supervision</span><span data-lang="ka">ობიექტის უსაფრთხოების
-                ზედამხედველობა</span></h3>
-            <p><span data-lang="en">Dedicated safety officers present on your construction site to monitor compliance,
-                prevent accidents, and ensure regulatory adherence in real time.</span><span data-lang="ka">გამოყოფილი
-                უსაფრთხოების ოფიცრები თქვენს სამშენებლო ობიექტზე — შესაბამისობის მონიტორინგი, უბედური შემთხვევების
-                პრევენცია და მარეგულირებელ მოთხოვნებთან შესაბამისობის უზრუნველყოფა რეალურ დროში.</span></p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🔍</div>
-            <h3><span data-lang="en">Safety Audits & Inspections</span><span data-lang="ka">უსაფრთხოების აუდიტი და
-                ინსპექტირება</span></h3>
-            <p><span data-lang="en">Thorough, systematic evaluation of your workplace safety practices against Georgian
-                and international standards — with clear corrective action plans.</span><span data-lang="ka">სამუშაო
-                ადგილის უსაფრთხოების პრაქტიკის საფუძვლიანი, სისტემატური შეფასება ქართული და საერთაშორისო სტანდარტების
-                მიხედვით — მკაფიო კორექტირების სამოქმედო გეგმებით.</span></p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">⚖️</div>
-            <h3><span data-lang="en">OHS Compliance Consulting</span><span data-lang="ka">შრომის დაცვის შესაბამისობის
-                კონსულტაცია</span></h3>
-            <p><span data-lang="en">Expert guidance to align your operations with Georgian labor law, international ISO
-                45001 standards, and EU-aligned best practices.</span><span data-lang="ka">ექსპერტული სახელმძღვანელო
-                მითითებები თქვენი ოპერაციების ქართულ შრომის კანონმდებლობასთან, ISO 45001 სტანდარტებთან და ევროპულ
-                საუკეთესო პრაქტიკასთან შესაბამისობის უზრუნველსაყოფად.</span></p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">📋</div>
-            <h3><span data-lang="en">Safety Documentation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაცია</span>
-            </h3>
-            <p><span data-lang="en">Preparation of all required safety documentation including safety plans, risk
-                registers, emergency procedures, and regulatory submissions.</span><span data-lang="ka">ყველა საჭირო
-                უსაფრთხოების დოკუმენტაციის მომზადება: უსაფრთხოების გეგმები, რისკების რეგისტრი, საგანგებო სიტუაციების
-                პროცედურები და მარეგულირებელი წარდგინებები.</span></p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">🎓</div>
-            <h3><span data-lang="en">Employee Safety Training</span><span data-lang="ka">თანამშრომელთა უსაფრთხოების
-                ტრენინგი</span></h3>
-            <p><span data-lang="en">Engaging, practical safety training programs for your workforce — available in
-                Georgian, English, and Russian — from inductions to advanced modules.</span><span
-                data-lang="ka">მიმზიდველი, პრაქტიკული უსაფრთხოების სასწავლო პროგრამები — ქართულ, ინგლისურ და რუსულ
-                ენებზე — ინდუქციიდან დაწყებული გაფართოებული მოდულებამდე.</span></p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">📊</div>
-            <h3><span data-lang="en">Risk Assessment</span><span data-lang="ka">რისკების შეფასება</span></h3>
-            <p><span data-lang="en">Systematic identification and evaluation of workplace hazards, with prioritized
-                mitigation strategies tailored to your specific site conditions.</span><span data-lang="ka">სამუშაო
-                ადგილის საფრთხეების სისტემატური იდენტიფიკაცია და შეფასება, პრიორიტეტული შემარბილებელი სტრატეგიებით,
-                რომლებიც მორგებულია თქვენი კონკრეტული ობიექტის პირობებზე.</span></p>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top: 2.5rem;">
-          <a class="btn-primary" onclick="showPage('services')">
-            <span data-lang="en">Explore All Services →</span>
-            <span data-lang="ka">ყველა სერვისი →</span>
-          </a>
-        </div>
+      <div class="hero-badge">
+        <span data-lang="en">Georgia's Leading Safety Consultants</span>
+        <span data-lang="ka">საქართველოს წამყვანი უსაფრთხოების კონსულტანტები</span>
       </div>
-    </section>
-
-    <!-- WHY US -->
-    <section class="section why-section">
-      <div class="section-inner">
-        <div class="why-grid">
-          <div>
-            <span class="section-label"><span data-lang="en">Why Bausafety</span><span data-lang="ka">რატომ
-                ბაუსეიფთი</span></span>
-            <h2 class="section-title light">
-              <span data-lang="en">Built on Experience,<br>Driven by Results</span>
-              <span data-lang="ka">გამოცდილებაზე დაფუძნებული,<br>შედეგებზე ორიენტირებული</span>
-            </h2>
-            <p class="section-desc light">
-              <span data-lang="en">We combine deep local knowledge with international best practices to deliver safety
-                solutions that actually work in Georgia's construction environment.</span>
-              <span data-lang="ka">ვაერთიანებთ ღრმა ადგილობრივ ცოდნას საერთაშორისო საუკეთესო პრაქტიკასთან, რათა
-                მივაწოდოთ უსაფრთხოების გადაწყვეტილებები, რომლებიც ნამდვილად მუშაობს საქართველოს სამშენებლო
-                გარემოში.</span>
-            </p>
-            <div class="why-items reveal">
-              <div class="why-item">
-                <div class="why-item-icon">🇬🇪</div>
-                <div class="why-item-text">
-                  <h4><span data-lang="en">Deep Local Expertise</span><span data-lang="ka">ღრმა ადგილობრივი
-                      ექსპერტიზა</span></h4>
-                  <p><span data-lang="en">In-depth knowledge of Georgian labor law, building codes, and regulatory
-                      landscape. We know what inspectors look for.</span><span data-lang="ka">ქართული შრომის
-                      კანონმდებლობის, სამშენებლო ნორმებისა და მარეგულირებელი გარემოს ღრმა ცოდნა. ჩვენ ვიცით, რას ეძებენ
-                      ინსპექტორები.</span></p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">🌍</div>
-                <div class="why-item-text">
-                  <h4><span data-lang="en">International Standards</span><span data-lang="ka">საერთაშორისო
-                      სტანდარტები</span></h4>
-                  <p><span data-lang="en">Implementation of ISO 45001, OHSAS 18001, and EU-aligned safety management
-                      systems adapted for local conditions.</span><span data-lang="ka">ISO 45001, OHSAS 18001 და
-                      ევროკავშირის სტანდარტებთან შესაბამისი უსაფრთხოების მართვის სისტემების დანერგვა ადგილობრივ
-                      პირობებთან ადაპტირებული სახით.</span></p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">⚡</div>
-                <div class="why-item-text">
-                  <h4><span data-lang="en">Rapid Response</span><span data-lang="ka">სწრაფი რეაგირება</span></h4>
-                  <p><span data-lang="en">Same-day consultation available. On-site deployment within 24 hours for urgent
-                      safety concerns or incident investigations.</span><span data-lang="ka">იმავე დღის კონსულტაცია
-                      ხელმისაწვდომია. ობიექტზე გასვლა 24 საათის განმავლობაში გადაუდებელი უსაფრთხოების საკითხებისა და
-                      ინციდენტების გამოძიებისთვის.</span></p>
-                </div>
-              </div>
-              <div class="why-item">
-                <div class="why-item-icon">🤝</div>
-                <div class="why-item-text">
-                  <h4><span data-lang="en">Long-Term Partnership</span><span data-lang="ka">გრძელვადიანი
-                      პარტნიორობა</span></h4>
-                  <p><span data-lang="en">We don't just audit and leave. Our ongoing monitoring programs keep your site
-                      compliant throughout the project lifecycle.</span><span data-lang="ka">ჩვენ მხოლოდ აუდიტს არ
-                      ვატარებთ და არ მივდივართ. ჩვენი მიმდინარე მონიტორინგის პროგრამები პროექტის სრულ სიცოცხლის ციკლში
-                      ობიექტს შესაბამისობაში ინარჩუნებს.</span></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="why-visual">
-            <div class="why-visual-card reveal">
-              <div class="why-big-num">ISO</div>
-              <div class="why-big-label"
-                style="font-size:1.5rem; color: var(--orange); font-family: 'Bebas Neue'; letter-spacing: .05em;">45001
-                Certified Practice</div>
-              <div class="why-divider"></div>
-              <p style="color: rgba(255,255,255,.5); font-size: .875rem; margin-bottom: 1.5rem;">
-                <span data-lang="en">Bausafety consultants operate to the highest internationally recognized
-                  occupational health & safety management standards.</span>
-                <span data-lang="ka">ბაუსეიფთის კონსულტანტები მუშაობენ საერთაშორისოდ აღიარებული შრომის ჯანმრთელობისა და
-                  უსაფრთხოების მართვის უმაღლეს სტანდარტებზე.</span>
-              </p>
-              <div class="cert-badges">
-                <span class="cert-badge">ISO 45001</span>
-                <span class="cert-badge">OHSAS 18001</span>
-                <span class="cert-badge"><span data-lang="en">Georgian Labor Code</span><span data-lang="ka">ქართული
-                    შრომის კოდექსი</span></span>
-                <span class="cert-badge">EU OHS Directives</span>
-                <span class="cert-badge">ILO Standards</span>
-              </div>
-              <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.08);">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
-                  <div>
-                    <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">50+</div>
-                    <div
-                      style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;">
-                      <span data-lang="en">Active Clients</span><span data-lang="ka">აქტიური კლიენტი</span>
-                    </div>
-                  </div>
-                  <div>
-                    <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">15+</div>
-                    <div
-                      style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;">
-                      <span data-lang="en">Expert Consultants</span><span data-lang="ka">ექსპერტი კონსულტანტი</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section testimonials-section">
-      <div class="section-inner">
-        <span class="section-label"><span data-lang="en">Client Testimonials</span><span data-lang="ka">კლიენტების
-            შეფასებები</span></span>
-        <h2 class="section-title">
-          <span data-lang="en">Trusted Across Georgia's Construction Industry</span>
-          <span data-lang="ka">სანდო პარტნიორი საქართველოს სამშენებლო ინდუსტრიაში</span>
-        </h2>
-        <div class="testimonials-grid reveal">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              <span data-lang="en">"Bausafety transformed how we approach site safety. Their team was on-site every
-                week, caught several critical issues before they became incidents, and helped us achieve full regulatory
-                compliance ahead of schedule."</span>
-              <span data-lang="ka">„ბაუსეიფთიმ მთლიანად შეცვალა ჩვენი მიდგომა ობიექტის უსაფრთხოებასთან. მათი გუნდი ყოველ
-                კვირა ობიექტზე იყო, გამოავლინა რამდენიმე კრიტიკული პრობლემა ინციდენტებამდე და დაგვეხმარა სრული
-                მარეგულირებელი შესაბამისობის დაგეგმილ ვადაზე ადრე მიღწევაში."</span>
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">გმ</div>
-              <div>
-                <div class="author-name">გიორგი მგელაძე</div>
-                <div class="author-role"><span data-lang="en">Project Director, Tbilisi Residential
-                    Developer</span><span data-lang="ka">პროექტის დირექტორი, თბილისის საცხოვრებელი დეველოპერი</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              <span data-lang="en">"The safety audit conducted by Bausafety revealed gaps we didn't know existed. Their
-                documentation package saved us enormous time when dealing with the labor inspection authority. Highly
-                professional team."</span>
-              <span data-lang="ka">„ბაუსეიფთის მიერ ჩატარებულმა უსაფრთხოების აუდიტმა გამოავლინა ხარვეზები, რომელთა
-                არსებობაც არ ვიცოდით. მათმა დოკუმენტაციის პაკეტმა დაგვიზოგა უზარმაზარი დრო შრომის ინსპექციასთან
-                ურთიერთობისას. უაღრესად პროფესიული გუნდი."</span>
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">ნხ</div>
-              <div>
-                <div class="author-name">ნინო ხაჩიძე</div>
-                <div class="author-role"><span data-lang="en">HSE Manager, Infrastructure Contractor</span><span
-                    data-lang="ka">HSE მენეჯერი, ინფრასტრუქტურის კონტრაქტორი</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              <span data-lang="en">"Our workers' safety training with Bausafety was genuinely engaging — not the usual
-                boring lectures. The team connected with our crew in Georgian, explained real scenarios, and we saw
-                immediate behavior changes on site."</span>
-              <span data-lang="ka">„ბაუსეიფთისთან ჩვენი მუშაკების უსაფრთხოების ტრენინგი ნამდვილად მიმზიდველი იყო — არა
-                ჩვეულებრივი მოსაბეზრებელი ლექციები. გუნდმა ჩვენს მუშაკებთან ქართულად ისაუბრა, რეალური სცენარები განმარტა
-                და ობიექტზე ქცევის მყისიერი ცვლილება დავინახეთ."</span>
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">ლჯ</div>
-              <div>
-                <div class="author-name">ლაშა ჯანელიძე</div>
-                <div class="author-role"><span data-lang="en">General Contractor, Commercial Construction</span><span
-                    data-lang="ka">გენერალური კონტრაქტორი, კომერციული მშენებლობა</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <div class="cta-banner">
-      <div class="cta-banner-content reveal">
-        <h2>
-          <span data-lang="en">Ready to Make Your<br>Site <span>100% Safe</span>?</span>
-          <span data-lang="ka">მზად ხართ თქვენი ობიექტი<br><span>100% უსაფრთხო</span> გახადოთ?</span>
-        </h2>
-        <p>
-          <span data-lang="en">Schedule a free consultation with our safety experts. We'll assess your needs and propose
-            a tailored solution within 24 hours.</span>
-          <span data-lang="ka">დაგეგმეთ უფასო კონსულტაცია ჩვენს უსაფრთხოების ექსპერტებთან. შევაფასებთ თქვენს საჭიროებებს
-            და 24 საათის განმავლობაში შემოგთავაზებთ მორგებულ გადაწყვეტილებას.</span>
-        </p>
+      <h1 class="hero-h1">
+        <span data-lang="en">Your Safety<br>Is Our <span>Priority</span></span>
+        <span data-lang="ka">თქვენი უსაფრთხოება<br>ჩვენი <span>პრიორიტეტია</span></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang="en">Professional construction safety supervision, OHS compliance consulting, and risk
+          management for Georgia's most demanding projects.</span>
+        <span data-lang="ka">პროფესიული სამშენებლო უსაფრთხოების ზედამხედველობა, შრომის დაცვის შესაბამისობის
+          კონსულტაცია და რისკების მართვა საქართველოს ყველაზე მოთხოვნადი პროექტებისთვის.</span>
+      </p>
+      <div class="hero-actions">
         <a class="btn-primary" onclick="showPage('contact')">
           <span data-lang="en">Request Free Consultation →</span>
           <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
         </a>
+        <a class="btn-secondary" onclick="showPage('services')">
+          <span data-lang="en">View Our Services</span>
+          <span data-lang="ka">ჩვენი სერვისები</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">200+</div>
+          <div class="hero-stat-label"><span data-lang="en">Projects Supervised</span><span data-lang="ka">სამეთვალყურეო
+              პროექტი</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">98%</div>
+          <div class="hero-stat-label"><span data-lang="en">Compliance Rate</span><span data-lang="ka">შესაბამისობის
+              მაჩვენებელი</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">12+</div>
+          <div class="hero-stat-label"><span data-lang="en">Years Experience</span><span data-lang="ka">წლიანი
+              გამოცდილება</span></div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label"><span data-lang="en">Fatal Incidents on Our Sites</span><span
+              data-lang="ka">ფატალური ინციდენტი ჩვენს ობიექტებზე</span></div>
+        </div>
+      </div>
+  </div>
+
+  <!-- HERO VIDEO -->
+  <div class="hero-video-box">
+    <video controls>
+      <source src="bausafety video.mp4" type="video/mp4">
+    </video>
+  </div>
+  </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" style="background: var(--off-white);">
+    <div class="section-inner">
+      <div style="max-width: 640px; margin-bottom: 1rem;">
+        <span class="section-label"><span data-lang="en">What We Do</span><span data-lang="ka">ჩვენი
+            საქმიანობა</span></span>
+        <h2 class="section-title">
+          <span data-lang="en">Comprehensive Safety Solutions for Every Stage of Construction</span>
+          <span data-lang="ka">სრულყოფილი უსაფრთხოების გადაწყვეტილებები მშენებლობის ყველა ეტაპზე</span>
+        </h2>
+        <p class="section-desc">
+          <span data-lang="en">Bausafety provides end-to-end occupational health and safety services across Georgia —
+            from initial risk assessments to ongoing site supervision and compliance management.</span>
+          <span data-lang="ka">ბაუსეიფთი გთავაზობთ შრომის ჯანმრთელობისა და უსაფრთხოების სრულ სერვისებს მთელ
+            საქართველოში — პირველადი რისკების შეფასებიდან მიმდინარე ობიექტის ზედამხედველობამდე და შესაბამისობის
+            მართვამდე.</span>
+        </p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">🦺</div>
+          <h3><span data-lang="en">Site Safety Supervision</span><span data-lang="ka">ობიექტის უსაფრთხოების
+              ზედამხედველობა</span></h3>
+          <p><span data-lang="en">Dedicated safety officers present on your construction site to monitor compliance,
+              prevent accidents, and ensure regulatory adherence in real time.</span><span data-lang="ka">გამოყოფილი
+              უსაფრთხოების ოფიცრები თქვენს სამშენებლო ობიექტზე — შესაბამისობის მონიტორინგი, უბედური შემთხვევების
+              პრევენცია და მარეგულირებელ მოთხოვნებთან შესაბამისობის უზრუნველყოფა რეალურ დროში.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3><span data-lang="en">Safety Audits & Inspections</span><span data-lang="ka">უსაფრთხოების აუდიტი და
+              ინსპექტირება</span></h3>
+          <p><span data-lang="en">Thorough, systematic evaluation of your workplace safety practices against Georgian
+              and international standards — with clear corrective action plans.</span><span data-lang="ka">სამუშაო
+              ადგილის უსაფრთხოების პრაქტიკის საფუძვლიანი, სისტემატური შეფასება ქართული და საერთაშორისო სტანდარტების
+              მიხედვით — მკაფიო კორექტირების სამოქმედო გეგმებით.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3><span data-lang="en">OHS Compliance Consulting</span><span data-lang="ka">შრომის დაცვის შესაბამისობის
+              კონსულტაცია</span></h3>
+          <p><span data-lang="en">Expert guidance to align your operations with Georgian labor law, international ISO
+              45001 standards, and EU-aligned best practices.</span><span data-lang="ka">ექსპერტული სახელმძღვანელო
+              მითითებები თქვენი ოპერაციების ქართულ შრომის კანონმდებლობასთან, ISO 45001 სტანდარტებთან და ევროპულ
+              საუკეთესო პრაქტიკასთან შესაბამისობის უზრუნველსაყოფად.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3><span data-lang="en">Safety Documentation</span><span data-lang="ka">უსაფრთხოების დოკუმენტაცია</span>
+          </h3>
+          <p><span data-lang="en">Preparation of all required safety documentation including safety plans, risk
+              registers, emergency procedures, and regulatory submissions.</span><span data-lang="ka">ყველა საჭირო
+              უსაფრთხოების დოკუმენტაციის მომზადება: უსაფრთხოების გეგმები, რისკების რეგისტრი, საგანგებო სიტუაციების
+              პროცედურები და მარეგულირებელი წარდგინებები.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3><span data-lang="en">Employee Safety Training</span><span data-lang="ka">თანამშრომელთა უსაფრთხოების
+              ტრენინგი</span></h3>
+          <p><span data-lang="en">Engaging, practical safety training programs for your workforce — available in
+              Georgian, English, and Russian — from inductions to advanced modules.</span><span
+              data-lang="ka">მიმზიდველი, პრაქტიკული უსაფრთხოების სასწავლო პროგრამები — ქართულ, ინგლისურ და რუსულ
+              ენებზე — ინდუქციიდან დაწყებული გაფართოებული მოდულებამდე.</span></p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3><span data-lang="en">Risk Assessment</span><span data-lang="ka">რისკების შეფასება</span></h3>
+          <p><span data-lang="en">Systematic identification and evaluation of workplace hazards, with prioritized
+              mitigation strategies tailored to your specific site conditions.</span><span data-lang="ka">სამუშაო
+              ადგილის საფრთხეების სისტემატური იდენტიფიკაცია და შეფასება, პრიორიტეტული შემარბილებელი სტრატეგიებით,
+              რომლებიც მორგებულია თქვენი კონკრეტული ობიექტის პირობებზე.</span></p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top: 2.5rem;">
+        <a class="btn-primary" onclick="showPage('services')">
+          <span data-lang="en">Explore All Services →</span>
+          <span data-lang="ka">ყველა სერვისი →</span>
+        </a>
       </div>
     </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-inner">
+  <!-- WHY US -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="why-grid">
         <div>
-          <div class="nav-logo" style="cursor:default;">
-            <div class="nav-logo-icon">⛑</div>
-            <div class="nav-logo-text">
-              <span class="nav-logo-en">Bausafety</span>
-              <span class="nav-logo-geo">ბაუსეიფთი</span>
+          <span class="section-label"><span data-lang="en">Why Bausafety</span><span data-lang="ka">რატომ
+              ბაუსეიფთი</span></span>
+          <h2 class="section-title light">
+            <span data-lang="en">Built on Experience,<br>Driven by Results</span>
+            <span data-lang="ka">გამოცდილებაზე დაფუძნებული,<br>შედეგებზე ორიენტირებული</span>
+          </h2>
+          <p class="section-desc light">
+            <span data-lang="en">We combine deep local knowledge with international best practices to deliver safety
+              solutions that actually work in Georgia's construction environment.</span>
+            <span data-lang="ka">ვაერთიანებთ ღრმა ადგილობრივ ცოდნას საერთაშორისო საუკეთესო პრაქტიკასთან, რათა
+              მივაწოდოთ უსაფრთხოების გადაწყვეტილებები, რომლებიც ნამდვილად მუშაობს საქართველოს სამშენებლო
+              გარემოში.</span>
+          </p>
+          <div class="why-items reveal">
+            <div class="why-item">
+              <div class="why-item-icon">🇬🇪</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Deep Local Expertise</span><span data-lang="ka">ღრმა ადგილობრივი
+                    ექსპერტიზა</span></h4>
+                <p><span data-lang="en">In-depth knowledge of Georgian labor law, building codes, and regulatory
+                    landscape. We know what inspectors look for.</span><span data-lang="ka">ქართული შრომის
+                    კანონმდებლობის, სამშენებლო ნორმებისა და მარეგულირებელი გარემოს ღრმა ცოდნა. ჩვენ ვიცით, რას ეძებენ
+                    ინსპექტორები.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">🌍</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">International Standards</span><span data-lang="ka">საერთაშორისო
+                    სტანდარტები</span></h4>
+                <p><span data-lang="en">Implementation of ISO 45001, OHSAS 18001, and EU-aligned safety management
+                    systems adapted for local conditions.</span><span data-lang="ka">ISO 45001, OHSAS 18001 და
+                    ევროკავშირის სტანდარტებთან შესაბამისი უსაფრთხოების მართვის სისტემების დანერგვა ადგილობრივ
+                    პირობებთან ადაპტირებული სახით.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">⚡</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Rapid Response</span><span data-lang="ka">სწრაფი რეაგირება</span></h4>
+                <p><span data-lang="en">Same-day consultation available. On-site deployment within 24 hours for urgent
+                    safety concerns or incident investigations.</span><span data-lang="ka">იმავე დღის კონსულტაცია
+                    ხელმისაწვდომია. ობიექტზე გასვლა 24 საათის განმავლობაში გადაუდებელი უსაფრთხოების საკითხებისა და
+                    ინციდენტების გამოძიებისთვის.</span></p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item-icon">🤝</div>
+              <div class="why-item-text">
+                <h4><span data-lang="en">Long-Term Partnership</span><span data-lang="ka">გრძელვადიანი
+                    პარტნიორობა</span></h4>
+                <p><span data-lang="en">We don't just audit and leave. Our ongoing monitoring programs keep your site
+                    compliant throughout the project lifecycle.</span><span data-lang="ka">ჩვენ მხოლოდ აუდიტს არ
+                    ვატარებთ და არ მივდივართ. ჩვენი მიმდინარე მონიტორინგის პროგრამები პროექტის სრულ სიცოცხლის ციკლში
+                    ობიექტს შესაბამისობაში ინარჩუნებს.</span></p>
+              </div>
             </div>
           </div>
-          <p class="footer-brand-desc">
-            <span data-lang="en">Georgia's trusted partner in construction safety and occupational health consulting.
-              Building safer workplaces, one site at a time.</span>
-            <span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებასა და შრომის ჯანმრთელობის
-              კონსულტაციაში. ვქმნით უფრო უსაფრთხო სამუშაო ადგილებს — ობიექტი ობიექტის მიყოლებით.</span>
-          </p>
         </div>
-        <div>
-          <h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4>
-          <ul>
-            <li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a>
-            </li>
-            <li><a onclick="showPage('about')"><span data-lang="en">About Us</span><span data-lang="ka">ჩვენს
-                  შესახებ</span></a></li>
-            <li><a onclick="showPage('services')"><span data-lang="en">Services</span><span
-                  data-lang="ka">სერვისები</span></a></li>
-            <li><a onclick="showPage('industries')"><span data-lang="en">Industries</span><span
-                  data-lang="ka">ინდუსტრიები</span></a></li>
-            <li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span
-                  data-lang="ka">კონტაქტი</span></a></li>
-          </ul>
-        </div>
-        <div>
-          <h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4>
-          <ul>
-            <li><a onclick="showPage('services')"><span data-lang="en">Site Safety Supervision</span><span
-                  data-lang="ka">ობიექტის ზედამხედველობა</span></a></li>
-            <li><a onclick="showPage('services')"><span data-lang="en">Safety Audits</span><span
-                  data-lang="ka">უსაფრთხოების აუდიტი</span></a></li>
-            <li><a onclick="showPage('services')"><span data-lang="en">OHS Compliance</span><span data-lang="ka">შრომის
-                  დაცვის შესაბამისობა</span></a></li>
-            <li><a onclick="showPage('services')"><span data-lang="en">Safety Documentation</span><span
-                  data-lang="ka">უსაფრთხოების დოკუმენტაცია</span></a></li>
-            <li><a onclick="showPage('services')"><span data-lang="en">Safety Training</span><span
-                  data-lang="ka">უსაფრთხოების ტრენინგი</span></a></li>
-          </ul>
-        </div>
-        <div>
-          <h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4>
-          <div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span
-                data-lang="ka">თბილისი, საქართველო</span></span></div>
-          <div class="footer-contact-item"><span>📞</span><span>+995 577 17 00 86</span></div>
-          <div class="footer-contact-item"><span>✉️</span><span><a href="/cdn-cgi/l/email-protection"
-                class="__cf_email__" data-cfemail="1674776365777073626f56717b777f7a3875797b">[email&#160;protected]</a>
-              << /span>
+        <div class="why-visual">
+          <div class="why-visual-card reveal">
+            <div class="why-big-num">ISO</div>
+            <div class="why-big-label"
+              style="font-size:1.5rem; color: var(--orange); font-family: 'Bebas Neue'; letter-spacing: .05em;">45001
+              Certified Practice</div>
+            <div class="why-divider"></div>
+            <p style="color: rgba(255,255,255,.5); font-size: .875rem; margin-bottom: 1.5rem;">
+              <span data-lang="en">Bausafety consultants operate to the highest internationally recognized
+                occupational health & safety management standards.</span>
+              <span data-lang="ka">ბაუსეიფთის კონსულტანტები მუშაობენ საერთაშორისოდ აღიარებული შრომის ჯანმრთელობისა და
+                უსაფრთხოების მართვის უმაღლეს სტანდარტებზე.</span>
+            </p>
+            <div class="cert-badges">
+              <span class="cert-badge">ISO 45001</span>
+              <span class="cert-badge">OHSAS 18001</span>
+              <span class="cert-badge"><span data-lang="en">Georgian Labor Code</span><span data-lang="ka">ქართული
+                  შრომის კოდექსი</span></span>
+              <span class="cert-badge">EU OHS Directives</span>
+              <span class="cert-badge">ILO Standards</span>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.08);">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+                <div>
+                  <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">50+</div>
+                  <div
+                    style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;">
+                    <span data-lang="en">Active Clients</span><span data-lang="ka">აქტიური კლიენტი</span>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-family:'Bebas Neue'; font-size: 2.2rem; color: var(--orange);">15+</div>
+                  <div
+                    style="font-size: .75rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em;">
+                    <span data-lang="en">Expert Consultants</span><span data-lang="ka">ექსპერტი კონსულტანტი</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer-contact-item"><span>🕐</span><span><span data-lang="en">Mon–Fri: 9:00 – 18:00</span><span
-                data-lang="ka">ორშ–პარ: 9:00 – 18:00</span></span></div>
-          <div class="footer-contact-item"><span>📘</span><a href="https://www.facebook.com/Bausafety" target="_blank"
-              style="color: rgba(255,255,255,.5); text-decoration:none; transition: color .2s;"
-              onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='rgba(255,255,255,.5)'">ⓕ
-              Facebook</a></div>
-          <div class="footer-contact-item"><span>📸</span><a href="https://www.instagram.com/bausafety/" target="_blank"
-              style="color: rgba(255,255,255,.5); text-decoration:none; transition: color .2s;"
-              onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='rgba(255,255,255,.5)'">🅾
-              𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦</a></div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა
-            უფლება დაცულია.</span></span>
-        <span style="color: rgba(255,255,255,.3);"><span data-lang="en">Tbilisi, Georgia · Construction Safety
-            Specialists</span><span data-lang="ka">თბილისი, საქართველო · სამშენებლო უსაფრთხოების
-            სპეციალისტები</span></span>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="section-inner">
+      <span class="section-label"><span data-lang="en">Client Testimonials</span><span data-lang="ka">კლიენტების
+          შეფასებები</span></span>
+      <h2 class="section-title">
+        <span data-lang="en">Trusted Across Georgia's Construction Industry</span>
+        <span data-lang="ka">სანდო პარტნიორი საქართველოს სამშენებლო ინდუსტრიაში</span>
+      </h2>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"Bausafety transformed how we approach site safety. Their team was on-site every
+              week, caught several critical issues before they became incidents, and helped us achieve full regulatory
+              compliance ahead of schedule."</span>
+            <span data-lang="ka">„ბაუსეიფთიმ მთლიანად შეცვალა ჩვენი მიდგომა ობიექტის უსაფრთხოებასთან. მათი გუნდი ყოველ
+              კვირა ობიექტზე იყო, გამოავლინა რამდენიმე კრიტიკული პრობლემა ინციდენტებამდე და დაგვეხმარა სრული
+              მარეგულირებელი შესაბამისობის დაგეგმილ ვადაზე ადრე მიღწევაში."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">გმ</div>
+            <div>
+              <div class="author-name">გიორგი მგელაძე</div>
+              <div class="author-role"><span data-lang="en">Project Director, Tbilisi Residential
+                  Developer</span><span data-lang="ka">პროექტის დირექტორი, თბილისის საცხოვრებელი დეველოპერი</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"The safety audit conducted by Bausafety revealed gaps we didn't know existed. Their
+              documentation package saved us enormous time when dealing with the labor inspection authority. Highly
+              professional team."</span>
+            <span data-lang="ka">„ბაუსეიფთის მიერ ჩატარებულმა უსაფრთხოების აუდიტმა გამოავლინა ხარვეზები, რომელთა
+              არსებობაც არ ვიცოდით. მათმა დოკუმენტაციის პაკეტმა დაგვიზოგა უზარმაზარი დრო შრომის ინსპექციასთან
+              ურთიერთობისას. უაღრესად პროფესიული გუნდი."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ნხ</div>
+            <div>
+              <div class="author-name">ნინო ხაჩიძე</div>
+              <div class="author-role"><span data-lang="en">HSE Manager, Infrastructure Contractor</span><span
+                  data-lang="ka">HSE მენეჯერი, ინფრასტრუქტურის კონტრაქტორი</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="en">"Our workers' safety training with Bausafety was genuinely engaging — not the usual
+              boring lectures. The team connected with our crew in Georgian, explained real scenarios, and we saw
+              immediate behavior changes on site."</span>
+            <span data-lang="ka">„ბაუსეიფთისთან ჩვენი მუშაკების უსაფრთხოების ტრენინგი ნამდვილად მიმზიდველი იყო — არა
+              ჩვეულებრივი მოსაბეზრებელი ლექციები. გუნდმა ჩვენს მუშაკებთან ქართულად ისაუბრა, რეალური სცენარები განმარტა
+              და ობიექტზე ქცევის მყისიერი ცვლილება დავინახეთ."</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ლჯ</div>
+            <div>
+              <div class="author-name">ლაშა ჯანელიძე</div>
+              <div class="author-role"><span data-lang="en">General Contractor, Commercial Construction</span><span
+                  data-lang="ka">გენერალური კონტრაქტორი, კომერციული მშენებლობა</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-content reveal">
+      <h2>
+        <span data-lang="en">Ready to Make Your<br>Site <span>100% Safe</span>?</span>
+        <span data-lang="ka">მზად ხართ თქვენი ობიექტი<br><span>100% უსაფრთხო</span> გახადოთ?</span>
+      </h2>
+      <p>
+        <span data-lang="en">Schedule a free consultation with our safety experts. We'll assess your needs and propose
+          a tailored solution within 24 hours.</span>
+        <span data-lang="ka">დაგეგმეთ უფასო კონსულტაცია ჩვენს უსაფრთხოების ექსპერტებთან. შევაფასებთ თქვენს საჭიროებებს
+          და 24 საათის განმავლობაში შემოგთავაზებთ მორგებულ გადაწყვეტილებას.</span>
+      </p>
+      <a class="btn-primary" onclick="showPage('contact')">
+        <span data-lang="en">Request Free Consultation →</span>
+        <span data-lang="ka">უფასო კონსულტაციის მოთხოვნა →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="nav-logo" style="cursor:default;">
+          <div class="nav-logo-icon">⛑</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-en">Bausafety</span>
+            <span class="nav-logo-geo">ბაუსეიფთი</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          <span data-lang="en">Georgia's trusted partner in construction safety and occupational health consulting.
+            Building safer workplaces, one site at a time.</span>
+          <span data-lang="ka">საქართველოს სანდო პარტნიორი სამშენებლო უსაფრთხოებასა და შრომის ჯანმრთელობის
+            კონსულტაციაში. ვქმნით უფრო უსაფრთხო სამუშაო ადგილებს — ობიექტი ობიექტის მიყოლებით.</span>
+        </p>
+      </div>
+      <div>
+        <h4><span data-lang="en">Navigation</span><span data-lang="ka">ნავიგაცია</span></h4>
+        <ul>
+          <li><a onclick="showPage('home')"><span data-lang="en">Home</span><span data-lang="ka">მთავარი</span></a>
+          </li>
+          <li><a onclick="showPage('about')"><span data-lang="en">About Us</span><span data-lang="ka">ჩვენს
+                შესახებ</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Services</span><span
+                data-lang="ka">სერვისები</span></a></li>
+          <li><a onclick="showPage('industries')"><span data-lang="en">Industries</span><span
+                data-lang="ka">ინდუსტრიები</span></a></li>
+          <li><a onclick="showPage('contact')"><span data-lang="en">Contact</span><span
+                data-lang="ka">კონტაქტი</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h4>
+        <ul>
+          <li><a onclick="showPage('services')"><span data-lang="en">Site Safety Supervision</span><span
+                data-lang="ka">ობიექტის ზედამხედველობა</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Audits</span><span
+                data-lang="ka">უსაფრთხოების აუდიტი</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">OHS Compliance</span><span data-lang="ka">შრომის
+                დაცვის შესაბამისობა</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Documentation</span><span
+                data-lang="ka">უსაფრთხოების დოკუმენტაცია</span></a></li>
+          <li><a onclick="showPage('services')"><span data-lang="en">Safety Training</span><span
+                data-lang="ka">უსაფრთხოების ტრენინგი</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Contact</span><span data-lang="ka">კონტაქტი</span></h4>
+        <div class="footer-contact-item"><span>📍</span><span><span data-lang="en">Tbilisi, Georgia</span><span
+              data-lang="ka">თბილისი, საქართველო</span></span></div>
+        <div class="footer-contact-item"><span>📞</span><span>+995 577 17 00 86</span></div>
+        <div class="footer-contact-item"><span>✉️</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+              data-cfemail="1674776365777073626f56717b777f7a3875797b">[email&#160;protected]</a>
+            << /span>
+        </div>
+        <div class="footer-contact-item"><span>🕐</span><span><span data-lang="en">Mon–Fri: 9:00 – 18:00</span><span
+              data-lang="ka">ორშ–პარ: 9:00 – 18:00</span></span></div>
+        <div class="footer-contact-item"><span>📘</span><a href="https://www.facebook.com/Bausafety" target="_blank"
+            style="color: rgba(255,255,255,.5); text-decoration:none; transition: color .2s;"
+            onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='rgba(255,255,255,.5)'">ⓕ
+            Facebook</a></div>
+        <div class="footer-contact-item"><span>📸</span><a href="https://www.instagram.com/bausafety/" target="_blank"
+            style="color: rgba(255,255,255,.5); text-decoration:none; transition: color .2s;"
+            onmouseover="this.style.color='#F97316'" onmouseout="this.style.color='rgba(255,255,255,.5)'">🅾
+            𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Bausafety (ბაუსეიფთი). <span data-lang="en">All rights reserved.</span><span data-lang="ka">ყველა
+          უფლება დაცულია.</span></span>
+      <span style="color: rgba(255,255,255,.3);"><span data-lang="en">Tbilisi, Georgia · Construction Safety
+          Specialists</span><span data-lang="ka">თბილისი, საქართველო · სამშენებლო უსაფრთხოების
+          სპეციალისტები</span></span>
+    </div>
+  </footer>
   </div>
 
 
